@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'principal',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'ensenate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'Templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
