@@ -1,0 +1,23 @@
+[33mcommit db211ca6aef5853ca2666f3b8b1f58c018123833[m
+Author: ensenate <soporte.ensenate.com>
+Date:   Wed Oct 25 10:22:41 2017 -0400
+
+    cuarto commit prueba 1.0 social-auth-login con super user creado y actualizacion del settings
+
+[33mcommit ad4e9f58a75018ae2728e00660ae32d74240c752[m
+Author: ensenate <soporte.ensenate.com>
+Date:   Wed Oct 25 09:19:34 2017 -0400
+
+    version de prueba de la app, configuracion del settings, y pag principal en blanco
+
+[33mcommit 6e5332a5a0691420a22e3f3f63a7e6605c409158[m
+Author: ensenate <soporte.ensenate.com>
+Date:   Wed Oct 25 08:07:04 2017 -0400
+
+    prueba de la app en pythonanywhere
+
+[33mcommit ca95ed4f91c3c954f7db3ada9bb617c607681356[m
+Author: ensenate <soporte.ensenate.com>
+Date:   Tue Oct 24 18:49:47 2017 -0400
+
+    primera prueba de la aplicasion ensenate

@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'principal',
+
+    #social-auth
+    'social_django',  # <--
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +52,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+
+    #social-auth
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # <--
 )
 
 ROOT_URLCONF = 'ensenate.urls'
@@ -65,6 +71,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #social-auth
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect', # <--
             ],
         },
     },
@@ -104,3 +114,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'home/ensenate/ensenate/static'
+
+
+#social-auth
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'principal'
+
+SOCIAL_AUTH_TWITTER_KEY = 'UgUdz40uNqbTN7TakMgiCvePw'
+SOCIAL_AUTH_TWITTER_SECRET = 'GNMKajwLD5k35vzWGkpxWC1iU08rZOr9iR6le0NvBbrQtH0dse'
+
+#end-social-auth
