@@ -1,13 +1,16 @@
+{% load staticfiles %}
+
 <header>
 	<div class="contenedor">
 		<div class="navegacion">
 			<div class="enlaces-izquierda">
-				<a  class="titulo-principal" href="{% url 'inicio' %}">enseñate</a>
+				<a  class="titulo-principal" href="{% url 'inicio' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
 			</div>
 			
 			<div class="enlaces-derecha">
+				<a href="{% url 'inicio' %}" class="" >Inicio</a>
 				<a href="{% url 'login' %}" class="" >Iniciar Sesion</a>
-				<a href="" class="">Registrate</a>
+				<a href="" class="">Crear Cuenta</a>
 				<a href="" class="">Contactanos</a>
 			</div>
 		</div>

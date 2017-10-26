@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<footer>
+	<div class="contenedor">
+		
+		<div class="seccion-footer">
+			<div class="enlaces-izquierda">
+				<a  class="titulo-principal" href="{% url 'inicio' %}"><img src="{% static 'img/logo-footer.png' %}" alt=""></a>
+			</div>
+			
+			<div class="enlaces-derecha">
+				<div class="caja-footer">
+					<span>Cuenta</span>
+					<ul>
+						<li><a href="{% url 'inicio' %}">inicio</a></li>
+						<li><a href="{% url 'login' %}">iniciar sesion</a></li>
+						<li><a href="">Crear cuenta</a></li>
+					</ul>
+				</div>
+				<div class="caja-footer">
+					<span>Acerca de Nosotros</span>
+					<ul>
+						<li><a href="">contactanos</a></li>
+					</ul>
+				</div>
+				<div class="caja-footer">
+					<span>Redes Sociales</span>
+					<ul class="caja-footer-sociales">
+						<li class=""><a class="icon-facebook" href=""></a></li>
+						<li class=""><a class="icon-twitter" href=""></a></li>
+						<li class=""><a class="icon-instagram" href=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</footer>

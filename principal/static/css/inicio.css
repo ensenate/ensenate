@@ -1,3 +1,74 @@
+@import url('base/base.css');
+@import url('base/nav.css');
+@import url('base/footer.css');
+@import url(fontello.css);
+
 body{
-	background: orange;
+	background: #f8f9f9  ;
+}
+
+.seccion{
+	margin: .5em auto;
+}
+
+.seccion .banner{
+	padding: .5em;
+	margin:  .7em;
+	display: flex;
+	justify-content: center;
+}
+.seccion-1 .banner .img-banner{
+	margin: 1em;
+	max-width: 40em;
+}
+.texto-banner{
+	position: absolute;
+	margin-top: 1.5em;
+	margin-right: 42em;
+	text-align:center;
+	text-transform:  lowercase;
+	width: 19em;
+}
+
+.texto-banner > h2{
+	font-size: 1.2em;
+	color: #333;
+}
+
+.texto-banner > a {
+	display: inline-block;
+	font-size: 1.5em;
+	margin-top: 0.5em;
+	padding: 0.5em;
+	text-decoration: none;
+	color: #333;
+	border: .02em solid #333;
+	border-radius: .7em ;
+}
+
+.texto-banner > a:hover {
+	background: rgba(0,0,0,0.05);
+
+	color: #46b39c;	
+	border-color: #46b39c;
+}
+.seccion-2{
+	background: #46b39c;
+
+}
+
+.seccion-2 .banner, .seccion-3 .banner{
+	text-align: center;
+	margin: 1em auto;
+	width: 80%;
+	padding: 1em;
+}
+.caja-texto{
+	padding: .5em;
+	display: flex;
+	max-width: 21em;
+	align-items: center;
+	font-size: 1em;
+	text-transform: lowercase;
+	color: #333;
 }
