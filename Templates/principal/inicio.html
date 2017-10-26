@@ -1,0 +1,17 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	Pagina de Inicio
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav.html' %}
+
+<h1>pagina principal</h1>
+{% endblock %}
