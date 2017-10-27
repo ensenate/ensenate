@@ -1,0 +1,114 @@
+@import url('base/base.css');
+@import url('base/nav.css');
+@import url('base/footer.css');
+@import url(fontello.css);
+
+.contenedor-central{
+	text-align: center;
+	margin: 1em auto;
+	max-width: 70%;
+	padding: 1em;
+}
+
+.contenedor-central h2{
+	padding: 0.3em;
+	margin: .4em;
+	font-size: 1.5em;
+	text-transform: lowercase;
+	color: #333;
+}
+.contenedor-form{
+	padding: 1em;	
+	margin: 1em auto; 
+	max-width: 45%;
+	box-shadow: 0 0 1px #333;
+}
+.contenedor-sociales{
+	display: flex;
+	justify-content: center;
+	margin: .2em;
+	padding: .2em;
+}
+.contenedor-boton {
+	width: 45%;
+	max-width: 45%;
+	margin: .2em;
+	padding: .4em;
+	border-radius: .2em;
+}
+.boton-twitter{
+	background: #55acee;
+}
+.boton-gplus{
+	background: #E0492F;
+}
+
+.contenedor-boton > a{
+	text-decoration: none;
+	color: white;
+	font-size: 0.9em;
+}
+
+.contenedor-boton > a > span{
+	padding-right:   3px;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	float: left;
+}
+.separador{
+	color: rgba(0,0,0,0.2);
+	margin:  0.8em auto;
+}
+
+.formulario{
+	padding: 0.8em 0;
+}
+.formulario > p{
+	margin: .5em auto;
+	padding: .2em 0;
+}
+.formulario > p > label{
+	margin: 0.2em; 
+	float: left;
+	text-transform:  lowercase;
+	font-size: 0.7em;
+	font-weight: bold;
+	color: #333;
+}
+
+.formulario > p > input[type="text"], .formulario > p > input[type="password"]{
+	width:  97.5%;
+	padding:  0.35em 0.2em;
+	border: 1px solid rgba(0,0,0,0.2);;
+}
+
+.contenedor-boton-sesion{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.contenedor-boton-sesion > a, .no-cuenta, .descripcion-no-cuenta, .error-formulario {
+	text-transform: lowercase;
+	font-size: 0.8em;
+	margin: 0.5em;
+	text-decoration: none;
+	color: #277BD7;
+}
+.contenedor-boton-sesion > input[type="submit"] {
+
+	margin: 0.5em;
+	padding: 0.7em;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	background: #0077CC;
+}
+
+.descripcion-no-cuenta{
+	color: #333;
+}
+
+.error-formulario{
+	color: red;
+}
+.contenedor-boton-sesion > a

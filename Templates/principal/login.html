@@ -3,18 +3,75 @@
 {% load staticfiles %}
 
 {% block static %}
-	
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
+
+{% block title %}
+	enseñate / Inicia Sesion
+{% endblock %}
+
 
 {% block body %}
 
 {% include 'bases/nav.html' %}
+<main>
+	<div class="contenedor">
 
-<a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+		<div class="contenedor-central">
+			
+			<h2>Comienza y aprende ahora con nosotros</h2>
+			
+			<div class="contenedor-form">
+				
+				<div class="contenedor-sociales">
+					<div class="contenedor-boton boton-gplus">
+						<a href="{% url 'social:begin' 'twitter' %}"> <span class="icon-gplus"></span> Google</a>
+					</div>
 
-<form action="{% url 'login' %}" method="post"> {% csrf_token %} 
-	{{ form.as_p}}
-	<input type="submit" value="iniciar sension">
-</form>
+					<div class="contenedor-boton boton-twitter">
+						<a href="{% url 'social:begin' 'twitter' %}"> <span class="icon-twitter"></span> Twitter</a>
+					</div>
+					
+				</div>
+				
+				<hr class="separador" >
+
+				{% if form.errors %}
+					
+				<div class="contenedor-sociales">
+					<p class="error-formulario" >por favor ingresa un usuario y una contraseña correcta</p>
+				</div> 
+				
+				<hr class="separador" >
+				
+				{% endif %}
+				
+				<form action="{% url 'login' %}" method="post" class="formulario" > {% csrf_token %} 
+					<p>
+						<label for="id_username">Usuario</label>
+						<input type="text" id="id_username" maxlength="254" name="username" placeholder="tu usuario">
+					</p>
+					<p>
+						<label for="id_password">Contraseña</label>
+						<input type="password" id="id_password" maxlength="254" name="password" placeholder="********">
+					</p>
+					<p class="contenedor-boton-sesion" >	
+						<a href="">¿Olvidaste tu contraseña?</a>						
+						<input type="submit" value="iniciar sension">
+					</p>
+				</form>
+			</div>
+
+			<div class="contenedor-form">
+				<p class="descripcion-no-cuenta">
+					¿no tienes una cuenta? <a href="" class="no-cuenta">registrate</a>
+				</p>			
+			</div>
+
+		</div>
+	</div>
+</main>
+
+{% include 'bases/footer.html' %}
 
 {% endblock %}
