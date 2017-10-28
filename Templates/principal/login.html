@@ -25,7 +25,7 @@
 				
 				<div class="contenedor-sociales">
 					<div class="contenedor-boton boton-gplus">
-						<a href="{% url 'social:begin' 'twitter' %}"> <span class="icon-gplus"></span> Google</a>
+						<a href="{% url 'social:begin' 'google-oauth2' %}"> <span class="icon-gplus"></span> Google</a>
 					</div>
 
 					<div class="contenedor-boton boton-twitter">
@@ -48,15 +48,15 @@
 				
 				<form action="{% url 'login' %}" method="post" class="formulario" > {% csrf_token %} 
 					<p>
-						<label for="id_username">Usuario</label>
+						<label for="id_username">Usuario:</label>
 						<input type="text" id="id_username" maxlength="254" name="username" placeholder="tu usuario">
 					</p>
 					<p>
-						<label for="id_password">Contraseña</label>
+						<label for="id_password">Contraseña:</label>
 						<input type="password" id="id_password" maxlength="254" name="password" placeholder="********">
 					</p>
 					<p class="contenedor-boton-sesion" >	
-						<a href="">¿Olvidaste tu contraseña?</a>						
+						<a href="{% url 'password_reset'%}">¿Olvidaste tu contraseña?</a>						
 						<input type="submit" value="iniciar sension">
 					</p>
 				</form>
@@ -64,7 +64,7 @@
 
 			<div class="contenedor-form">
 				<p class="descripcion-no-cuenta">
-					¿no tienes una cuenta? <a href="" class="no-cuenta">registrate</a>
+					¿no tienes una cuenta? <a href="{% url 'registrar_usuario' %}" class="no-cuenta">registrate</a>
 				</p>			
 			</div>
 

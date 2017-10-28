@@ -1,0 +1,11 @@
+@import url('login.css');
+
+.errorlist{
+	list-style: none;
+}
+
+.errorlist > li{
+	font-size: 0.8em;
+	color: red;
+	padding: .1em;
+}

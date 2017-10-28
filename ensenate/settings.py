@@ -119,7 +119,7 @@ STATIC_ROOT = 'home/ensenate/ensenate/static'
 #social-auth
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.twitter.TwitterOAuth',
-
+    'social_core.backends.google.GoogleOAuth2', #esto es nuevo
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -131,4 +131,17 @@ LOGIN_REDIRECT_URL = 'dashboard'
 SOCIAL_AUTH_TWITTER_KEY = 'UgUdz40uNqbTN7TakMgiCvePw'
 SOCIAL_AUTH_TWITTER_SECRET = 'GNMKajwLD5k35vzWGkpxWC1iU08rZOr9iR6le0NvBbrQtH0dse'
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  '303490334401-p36un7j57h1hgrd47vd86rsu2ln4og7a.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'gaLS5G7UPwEs0T5Afi8XUbvT'
+
 #end-social-auth
+
+#restaurar password
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'soporte.ensenate@gmail.com'
+EMAIL_HOST_PASSWORD = 'ensenate123'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+#end

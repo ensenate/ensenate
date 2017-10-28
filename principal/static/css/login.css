@@ -75,10 +75,12 @@
 	color: #333;
 }
 
-.formulario > p > input[type="text"], .formulario > p > input[type="password"]{
+.formulario input[type="text"], .formulario input[type="password"], .formulario input[type="email"]{
 	width:  97.5%;
 	padding:  0.35em 0.2em;
 	border: 1px solid rgba(0,0,0,0.2);;
+	background: none;
+	border-radius: 5px;
 }
 
 .contenedor-boton-sesion{
@@ -94,7 +96,7 @@
 	text-decoration: none;
 	color: #277BD7;
 }
-.contenedor-boton-sesion > input[type="submit"] {
+input[type="submit"] {
 
 	margin: 0.5em;
 	padding: 0.7em;
@@ -102,6 +104,7 @@
 	border-radius: 5px;
 	color: white;
 	background: #0077CC;
+	cursor: pointer;
 }
 
 .descripcion-no-cuenta{
@@ -111,4 +114,6 @@
 .error-formulario{
 	color: red;
 }
-.contenedor-boton-sesion > a
+.contenedor-boton-sesion > a:hover, .no-cuenta:hover{
+	text-decoration: underline;
+}

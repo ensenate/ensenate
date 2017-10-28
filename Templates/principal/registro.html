@@ -1,0 +1,59 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / Crear Cuenta
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/registro.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav.html' %}
+
+<main>
+	<div class="contenedor">
+		<div class="contenedor-central">
+			<h2>Ingresa tus datos</h2>
+			<div class="contenedor-form">
+				<div class="contenedor-sociales">
+					<div class="contenedor-boton boton-gplus">
+						<a href="{% url 'social:begin' 'google-oauth2' %}"> <span class="icon-gplus"></span> Google</a>
+					</div>
+
+					<div class="contenedor-boton boton-twitter">
+						<a href="{% url 'social:begin' 'twitter' %}"> <span class="icon-twitter"></span> Twitter</a>
+					</div>
+					
+				</div>
+				
+				<hr class="separador" >
+
+				{% if form.errors %}
+				<div class="contenedor-sociales">
+					<p class="error-formulario" >datos incorrectos</p>
+				</div> 
+				<hr class="separador" >
+				{% endif %}
+				
+				<form action="{% url 'registrar_usuario' %}" method="post" class="formulario" > {% csrf_token %} 
+					{{form.as_p}}
+					<input type="submit" value="registrarme">
+				</form>
+			</div>
+
+			<div class="contenedor-form">
+				<p class="descripcion-no-cuenta">
+					¿tienes una cuenta? <a href="{% url 'login' %}" class="no-cuenta">logueate</a>
+				</p>			
+			</div>
+		</div>
+	</div>
+</main>
+
+
+{% include 'bases/footer.html' %}
+{% endblock %}

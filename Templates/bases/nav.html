@@ -8,9 +8,9 @@
 			</div>
 			
 			<div class="enlaces-derecha">
-				<a href="{% url 'inicio' %}" class="" >Inicio</a>
-				<a href="{% url 'login' %}" class="" >Iniciar Sesion</a>
-				<a href="" class="">Crear Cuenta</a>
+				<a href="{% url 'inicio' %}" class="{%if  request.path == '/' %}activo{% endif %}" >Inicio</a>
+				<a href="{% url 'login' %}" class="{%if  request.path == '/login/' %}activo{% endif %}" >Iniciar Sesion</a>
+				<a href="{% url 'registrar_usuario' %}" class="{%if  request.path == '/crear_usuario/' %}activo{% endif %}">Crear Cuenta</a>
 				<a href="" class="">Contactanos</a>
 			</div>
 		</div>

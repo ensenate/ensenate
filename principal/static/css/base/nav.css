@@ -37,3 +37,7 @@ header{
 .navegacion .enlaces-derecha a:hover{
 	color: #46b39c;
 }
+
+.activo{
+	font-weight: bold;
+}
