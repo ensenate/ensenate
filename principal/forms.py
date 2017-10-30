@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
 from django import forms
+from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
 from django.contrib.auth.models import User
 
-class crear_usuario_form(forms.ModelForm):
+class crear_usuario_form(UserCreationForm):
 
 	error_messages = {
-	 	'error_password': "las contraseñas no son iguales",
+	 	'password_mismatch': "las contraseñas no son iguales",
 	}
 	username = forms.RegexField(
 		label = "Usuario", 
@@ -48,22 +50,12 @@ class crear_usuario_form(forms.ModelForm):
 
 	class Meta:
 		model = User
-		fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
+		fields = ('username','first_name','last_name','email', 'password1','password2')
 
-	def clean_password2(self):
-		password1 = self.cleaned_data.get("password1")
-		password2 = self.cleaned_data.get("password2")
-		
-		if password1 and password2 and password1 != password2:
-			raise forms.ValidationError(
-			self.error_messages['error_password'],
-			code='error_password',
+class restablecer_password(PasswordResetForm):
+
+	email = forms.CharField(
+			label = "Correo Electronico",
+			error_messages = { 'invalid':'ingresa un correo electronico valido', 'required': 'este campo es obligatorio' },
+			widget = forms.TextInput( attrs = { 'class': 'form-control', 'type': 'email', 'placeholder':'ingresa tu correo electronico' } ),
 			)
-		return password2
-
-	def save(self, commit=True):
-		user = super().save(commit=False)
-		user.set_password(self.cleaned_data["password1"])
-		if commit:
-			user.save()
-		return user
