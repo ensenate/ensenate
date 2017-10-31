@@ -1,0 +1,32 @@
+{% extends 'bases/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+	Contactanos / Enseñate
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/contactanos.css' %}">
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav.html' %}
+
+	<div class="contenedor">
+		<div class="burbuja">
+			<h1>Contactanos</h1>
+			<h2>envianos un mensaje y contactate con nosotros</h2>
+			<div class="error">{{error}}</div>
+
+		<form method="post" action="{% url 'contactanos' %}" class="formulario"> {% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" value="Enviar mensaje">
+		</form>
+		
+		</div>
+	</div>
+{% include 'bases/footer.html' %}
+
+{% endblock %}

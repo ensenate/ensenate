@@ -75,7 +75,7 @@
 	color: #333;
 }
 
-.formulario input[type="text"], .formulario input[type="password"], .formulario input[type="email"]{
+textarea, .formulario input[type="text"], .formulario input[type="password"], .formulario input[type="email"]{
 	width:  97.5%;
 	padding:  0.35em 0.2em;
 	border: 1px solid rgba(0,0,0,0.2);;

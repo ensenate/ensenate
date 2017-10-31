@@ -3,6 +3,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
 from django.contrib.auth.models import User
 
+from .models import Contacto
+
 class crear_usuario_form(UserCreationForm):
 
 	error_messages = {
@@ -52,10 +54,39 @@ class crear_usuario_form(UserCreationForm):
 		model = User
 		fields = ('username','first_name','last_name','email', 'password1','password2')
 
-class restablecer_password(PasswordResetForm):
+class restablecer_password_form(PasswordResetForm):
 
 	email = forms.CharField(
 			label = "Correo Electronico",
 			error_messages = { 'invalid':'ingresa un correo electronico valido', 'required': 'este campo es obligatorio' },
 			widget = forms.TextInput( attrs = { 'class': 'form-control', 'type': 'email', 'placeholder':'ingresa tu correo electronico' } ),
 			)
+
+class contacto_form(forms.ModelForm):
+
+	asunto= forms.CharField(
+		label = "Asunto", 
+		required = True,
+		max_length = 50,
+		error_messages = { 'unique': 'ya existe este usuario.',  'required': 'este campo es obligatorio' },
+		widget = forms.TextInput( attrs = { 'class': 'form-control','placeholder':'ingresa tu asunto' } ),#se le puede poner todos los atributos del html
+		)
+
+	email = forms.CharField(
+		label = "Correo Electronico",
+		required = True,
+		error_messages = { 'invalid':'ingresa un correo electronico valido', 'required': 'este campo es obligatorio' },
+		widget = forms.TextInput( attrs = { 'class': 'form-control', 'type': 'email', 'placeholder':'ingresa tu correo electronico' } ),
+		)
+
+	
+	mensaje = forms.CharField(
+		label = "Mensaje",
+		error_messages = { 'required': 'este campo es obligatorio' },
+		widget = forms.Textarea(attrs={'class': 'form-control', 'type': 'text', 'placeholder':'ingresa tu mensaje'} ),
+		)
+
+	class Meta:
+		model = Contacto
+		fields = ('asunto','email','mensaje', )
+

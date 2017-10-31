@@ -1,0 +1,26 @@
+{% extends 'bases/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+	Envio Correcto / Enseñate
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/restablecer-password.css' %}">
+{% endblock %}
+
+{% block stiles %}
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav.html' %}
+	<div class="contenedor">
+		<div class="burbuja">
+			<h1>Envio Correcto</h1>
+			<h2>Tu mensaje se envio correctamente haz click <a href="{% url 'inicio' %}">aqui</a> para volver a la pagina de inicio</h2>
+		</div>
+	</div>
+	
+{% endblock %}

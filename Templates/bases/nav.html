@@ -11,7 +11,7 @@
 				<a href="{% url 'inicio' %}" class="{%if  request.path == '/' %}activo{% endif %}" >Inicio</a>
 				<a href="{% url 'login' %}" class="{%if  request.path == '/login/' %}activo{% endif %}" >Iniciar Sesion</a>
 				<a href="{% url 'registrar_usuario' %}" class="{%if  request.path == '/crear_usuario/' %}activo{% endif %}">Crear Cuenta</a>
-				<a href="" class="">Contactanos</a>
+				<a href="{% url 'contactanos' %}" class="{%if  request.path == '/contacto/' %}activo{% endif %}">Contactanos</a>
 			</div>
 		</div>
 	</div>

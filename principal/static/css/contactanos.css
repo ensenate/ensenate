@@ -1,0 +1,17 @@
+@import url('restablecer-password.css');
+@import url('login.css');
+
+input, textarea{
+	margin: 0.4em 0;
+}
+
+textarea{
+	outline: none;
+	resize: none;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.formulario input[type="submit"]{
+	width: auto;
+}
