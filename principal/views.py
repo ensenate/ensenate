@@ -55,16 +55,6 @@ def registrar_usuario(request):
 	}
 	return render(request, template, context)
 
-
-
-@login_required
-def dashboard(request):
-	template = 'principal/dashboard.html'
-	context = {
-
-	}
-	return render(request, template, context)
-
 @csrf_protect
 def restablecer_password(request, subject_template_name='registration/password_reset_subject.txt', 	token_generator=default_token_generator, post_reset_redirect=None, from_email=None, html_email_template_name=None):
 

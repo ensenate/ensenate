@@ -1,0 +1,100 @@
+@import url('base/base.css');
+@import url('base/nav.css');
+
+header{
+	background: #0088CC;
+}
+body{
+	background:#f2f2f2;
+}
+
+.navegacion .enlaces-derecha .activo{
+	background: rgba(0,0,0,0.1);
+	border-radius: 15px;
+	font-weight: normal;
+}
+
+.navegacion .enlaces-derecha a:hover{
+	color: #333;
+}
+
+.navegacion_perfil{
+	display: inline-block;
+	list-style: none;
+	margin: auto 0.7em;
+	max-width: 7em;
+	text-align: center;
+	padding: 0.5em;
+}
+
+.navegacion_perfil li{
+	list-style: none;
+}
+
+.navegacion_perfil li span {
+	background:none;
+	color:white;
+	padding:10px 12px;
+	display:block;
+	width: 100%;
+}
+
+.navegacion_perfil li ul::before {
+	content:"";
+	left: 40%;
+	top: -3%;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 0.5em solid white;
+	border-right: .8em solid transparent;
+	border-left: .8em solid transparent;
+}
+
+.navegacion_perfil li ul {
+	display:none;
+	position:absolute;
+	max-width:7em;
+	margin-top: 0.3em;
+	text-align: left;
+	border-radius: 0.3em;
+	background: white;
+	padding: 0.5em;
+}
+.navegacion_perfil li:hover > ul {
+	display:block;
+}
+.navegacion_perfil li ul li {
+	display: block;
+}
+.navegacion_perfil li ul li a{
+	display: block;
+	padding: 0.5em;
+	color: #0088CC;
+	font-size: 1em;
+	text-decoration: none;
+}
+
+.navegacion .enlaces-derecha .menu_inicio{
+	color: white;
+}
+
+.navegacion .enlaces-derecha .menu_inicio:hover{
+	color: white;	
+}
+
+.navegacion_perfil li ul li a:hover{
+	background: #0088cc;
+}
+.navegacion .enlaces-derecha a:hover{
+	color: white;
+}
+
+.burbuja{
+	text-align: center;
+	max-width: 40em;
+	margin: 10em auto;
+	background: white;
+	border-radius: 10px;
+	padding: 0.5em;
+}

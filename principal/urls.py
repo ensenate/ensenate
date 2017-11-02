@@ -37,8 +37,4 @@ urlpatterns = [
 	url(r'^contacto/$', principal.contactanos.as_view(), name='contactanos'),	
 	url(r'^envio_correcto/$', principal.envio_correcto.as_view(), name='envio_correcto'),
 
-
-
-	
-	url(r'^dashboard/$', principal.dashboard, name='dashboard'),
 ]

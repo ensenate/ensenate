@@ -21,7 +21,7 @@ header{
 	padding: 2px;
 }
 
-.navegacion .enlaces-derecha a{
+.navegacion .enlaces-derecha .menu_inicio{
 	padding: .3em 1.5em;
 	background:  none;
 	
@@ -34,10 +34,11 @@ header{
 	color:  #333;
 	cursor: pointer
 }
-.navegacion .enlaces-derecha a:hover{
+.navegacion .enlaces-derecha .menu_inicio:hover{
 	color: #46b39c;
 }
 
-.activo{
+
+.navegacion .enlaces-derecha .activo{
 	font-weight: bold;
 }

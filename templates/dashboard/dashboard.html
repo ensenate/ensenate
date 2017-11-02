@@ -1,0 +1,28 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / {{ user.username}}
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav.html' %}
+
+	<div class="contenedor">
+		<div class="burbuja">
+		
+		<div class="unidades">
+			<h3>Unidades de Lenguaje de Señas</h3>
+			
+		</div>
+		
+		</div>	
+	</div>
+
+{% endblock %}
