@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from django.db import models
+AUTH_USER_MODEL = 'dashboard.models.User'
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -40,6 +43,7 @@ INSTALLED_APPS = (
         #aplicasiones locales
     'principal',
     'dashboard',
+    'usuarios',
 
     #social-auth
     'social_django',  # <--
@@ -122,6 +126,10 @@ STATIC_URL = os.path.join(BASE_DIR, "static/")
 
 STATIC_ROOT = 'home/ensenate/ensenate/static'
 
+#imagenes
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'media')
 
 #social-auth
 AUTHENTICATION_BACKENDS = (
@@ -152,3 +160,5 @@ EMAIL_HOST_PASSWORD = 'ensenate123'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #end
+
+AUTH_USER_MODEL = 'usuarios.User'

@@ -13,13 +13,26 @@
 {% block body %}
 
 {% include 'bases/nav.html' %}
+	
 
 	<div class="contenedor">
 		<div class="burbuja">
 		
 		<div class="unidades">
 			<h3>Unidades de Lenguaje de Señas</h3>
+			<h4>Nivel: {{request.user.nivel}} </h4>
 			
+			{% for  unidades in unidades %}			
+				
+				<div class="seccion-unidad">
+				{% if  unidades.bloqueado %} <a href="{% url 'lecciones' unidades.pk %}"> {% else %} <span> {% endif %} {{ unidades.titulo }}
+			   	
+			   	<img src="{% static unidades.image.url %}" style="width:128px;height:128px"/>
+
+				{% if  unidades.bloqueado %} </a> {% else %} </span> {% endif %}
+				</div>
+
+			{% endfor %}
 		</div>
 		
 		</div>	

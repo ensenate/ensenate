@@ -1,0 +1,15 @@
+<body>
+	
+lecciones de esta unidad
+
+<h1>{{unidad.titulo}}</h1>
+
+
+{% for item in lecciones %}
+	<a href="{% url 'practica' unidad=unidad.titulo leccion=item.pk %}">{{item.titulo}}</a>
+{% endfor %}
+
+
+
+
+</body>

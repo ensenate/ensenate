@@ -28,7 +28,7 @@ urlpatterns = [
 
 
 	#vista de inicio
-	url(r'^$', principal.inicio.as_view(), name='inicio'),
+	url(r'^$', principal.inicio, name='inicio'),
 
 	#vista de registro
 	url(r'^crear_usuario/$', principal.registrar_usuario, name='registrar_usuario'),

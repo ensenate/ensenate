@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 
 #modelos
-from django.contrib.auth.models import User
+from usuarios.models import User
 from .models import Contacto
 
 
@@ -29,8 +29,12 @@ from django.core.urlresolvers import reverse
 
 # Create your views here.
 
-class inicio (TemplateView):
-	template_name = 'principal/inicio.html'
+def inicio (request):
+	template = 'principal/inicio.html'
+	if request.user.is_authenticated():
+		return redirect('dashboard')
+	return render(request,template,{})
+	
 
 @csrf_protect
 def registrar_usuario(request):

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 #decoradores
 from django.contrib.auth.decorators import login_required
@@ -7,11 +7,46 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 
 
+#prueba
+from .models import Unidad, Leccion, Palabra#Category, Item#
+
+
 @login_required
 def inicio(request):
 	template = 'dashboard/dashboard.html'
-	context = {
 
+	unidades = Unidad.objects.all()
+
+	context = {
+		'unidades':unidades,
 	}
 	return render(request,template,context)
+
+@login_required
+def perfil(request):
+	template = 'dashboard/perfil.html'
+	return render(request, template, {})
+
+@login_required
+def lecciones(request, pk):
+	template = 'dashboard/lecciones.html'
+	get_object_or_404(Unidad, pk=pk)
+
+	unidad = Unidad.objects.get(pk=pk)
+	lecciones = unidad.leccion_set.all()
+	return render(request, template, {'unidad':unidad, 'lecciones':lecciones})
+
+@login_required
+def practica(request, unidad, leccion):
+	template = 'dashboard/practica.html'
+	get_object_or_404(Unidad, titulo=unidad)
+
+	unidades = Unidad.objects.get(titulo=unidad)
+	
+	lecciones = Leccion.objects.get(pk=leccion)
+
+	palabras = lecciones.palabra_set.all()
+	
+
+	return render(request, template, {'lecciones':lecciones, 'unidades':unidades, 'palabras':palabras})
 
