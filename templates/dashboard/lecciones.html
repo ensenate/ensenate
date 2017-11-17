@@ -1,15 +1,33 @@
-<body>
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / leccion
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/leccion.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav-user.html' %}
 	
-lecciones de esta unidad
 
-<h1>{{unidad.titulo}}</h1>
-
-
-{% for item in lecciones %}
-	<a href="{% url 'practica' unidad=unidad.titulo leccion=item.pk %}">{{item.titulo}}</a>
-{% endfor %}
+	<div class="contenedor">
+		<div class="burbuja">
+		
+			<h1>{{unidad.titulo}}</h1>
 
 
+			{% for item in lecciones %}
+				<a href="{% url 'practica' unidad=unidad.titulo leccion=item.pk %}">{{item.titulo}}</a>
+			{% endfor %}
+		
+		</div>
+		
+		</div>	
+	</div>
 
-
-</body>
+{% endblock %}

@@ -1,3 +1,38 @@
-{{request.user.titulo}}
-<h1>{{request.user.username}}</h1>
-<h2>{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / perfil
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav-user.html' %}
+	
+
+	<div class="contenedor">
+		<div class="burbuja">
+		
+			<div class="username">{{request.user.username}}</div>
+			<div class="user-image">
+				<img src="{{ request.user.image.url}}" alt="imagen de perfil">
+			</div>
+			<div class="user-nivel">nivel: {{ request.user.nivel}} </div>
+			<div class="user-nombres">{{ request.user.first_name }} {{ request.user.last_name }}</div>
+			<div class="user-nombres">{{ request.user.email }}</div>
+			<div class="biografia" >{{ request.user.biografia }}</div>
+			<div class="aprendiendo" >Aprendiendo desde: {{ request.user.fecha_inicio}}</div>
+		
+		</div>
+		
+		</div>	
+	</div>
+
+{% endblock %}
+
+

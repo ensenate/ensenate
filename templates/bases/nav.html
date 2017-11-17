@@ -4,37 +4,14 @@
 	<div class="contenedor">
 		<div class="navegacion">
 			<div class="enlaces-izquierda">
-				
-				{% if request.path == '/dashboard/' %}			
-					<a  class="titulo-principal" href="{% if request.user.is_authenticated %} {% url 'dashboard' %} {% else %}{% url 'inicio' %} {% endif %}"><img src="{% static 'img/logo-sesion.png' %}" alt=""></a>
-				{% else %}
 					<a  class="titulo-principal" href="{% if request.user.is_authenticated %} {% url 'dashboard' %} {% else %}{% url 'inicio' %} {% endif %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
-
-				{% endif %}
 			</div>
 			
-			<div class="enlaces-derecha">
-
-				{% if request.user.is_authenticated and request.path = '/dashboard/' %}
-					<a href="{% url 'dashboard' %}" class="{%if  request.path == '/dashboard/' %}activo{% endif %} menu_inicio" >Inicio</a>
-						<a href=""><img src="{{request.user.image.url}}" alt="" width="48px" height="48px"></a>
-					<ul class="navegacion_perfil">
-						{{request.user.gemas}}
-						<li><span class="usuario" >{{request.user.username}}</span>
-							<ul>
-								<li><a href="{% url 'perfil' %}">perfil</a></li>
-								<li><a href="">configuracion</a></li>
-								<li><a href="">ayuda</a></li>
-								<li><a href="{% url 'logout' %}">cerrar sesion</a></li>
-							</ul>
-						</li>
-					</ul>
-				{% else %}
+			<div class="enlaces-derecha {%if request.user.is_authenticated%} usuario-activo{% endif %}">
 					<a href="{% url 'inicio' %}" class="{%if  request.path == '/' %}activo{% endif %} menu_inicio" >Inicio</a>
 					<a href="{% url 'login' %}" class="{%if  request.path == '/login/' %}activo{% endif %} menu_inicio" >Iniciar Sesion</a>
 					<a href="{% url 'registrar_usuario' %}" class="{%if  request.path == '/crear_usuario/' %}activo{% endif %} menu_inicio">Crear Cuenta</a>
 					<a href="{% url 'contactanos' %}" class="{%if  request.path == '/contacto/' %}activo{% endif %} menu_inicio">Contactanos</a>
-				{% endif %}
 			</div>
 		</div>
 	</div>

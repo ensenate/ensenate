@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<header>
+	<div class="contenedor">
+		<div class="navegacion">
+			<div class="enlaces-izquierda">
+					<a  class="titulo-principal" href="{% if request.user.is_authenticated %} {% url 'dashboard' %} {% else %}{% url 'inicio' %} {% endif %}"><img src="{% static 'img/logo-sesion.png' %}" alt=""></a>
+			</div>
+			
+			<div class="enlaces-derecha usuario-activo">
+					<a href="{% url 'dashboard' %}" class="{%if  request.path == '/dashboard/' %}activo{% endif %} menu_inicio" >Inicio</a>
+					<ul class="navegacion_perfil">
+						<li class="li-principal">
+						<div class="datos-usuario">
+							<span><img src="{{request.user.image.url}}" alt="" width="48px" height="48px"></span>
+							<span class="usuario" >{{request.user.username}}</span>
+							<span>G {{request.user.gemas}}</span>
+						</div>
+							<ul>
+								<li><a href="{% url 'perfil' %}">perfil</a></li>
+								<li><a href="">configuracion</a></li>
+								<li><a href="">ayuda</a></li>
+								<li><a href="{% url 'logout' %}">cerrar sesion</a></li>
+							</ul>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+</header>

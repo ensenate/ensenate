@@ -1,0 +1,31 @@
+@import url('base/base.css');
+@import url('base/nav.css');
+@import url('dashboard.css');
+
+.username, .user-nivel,.user-image, .user-nombres, .aprendiendo, .biografia{
+	text-align: center;
+	text-transform: lowercase;
+	font-weight: bold;
+	
+	padding: .2em;
+	margin:0.2em;
+	color: #333
+}
+
+.username{
+	font-size: 2em;
+}
+.user-image > img{
+	width: 8em;
+	height: 8em;
+	max-width: 10em;
+	max-height: 10em;
+}
+.user-nivel{	
+	font-size: 1.2em;
+	font-weight: normal;
+}
+
+.aprendiendo{
+	text-align: left;
+}
