@@ -20,7 +20,7 @@
 		
 		<div class="unidades">
 
-				<div class="texto">
+				<div class="texto icon-language">
 
 					Unidades de Lenguaje de Señas
 					<br>
@@ -30,14 +30,13 @@
 				</div>
 			
 			{% for  unidades in unidades %}			
-				
-				<div class="seccion-unidad">
-				{% if  unidades.bloqueado %} <a href="{% url 'lecciones' unidades.pk %}"> {% else %} <span> {% endif %}
-				{{ unidades.titulo }}			   	
-			   	<img class="imagen-seccion" src="{% static unidades.image.url %}"/>
-
-				{% if  unidades.bloqueado %} </a> {% else %} </span> {% endif %}
+				{% if forloop.counter == 1 %}
+				<div style="margin: 0 auto;">
+					{% include 'dashboard/secciones.html' %}				
 				</div>
+				{% else %}
+					{% include 'dashboard/secciones.html' %}
+				{% endif %}
 			{% endfor %}
 		</div>
 		

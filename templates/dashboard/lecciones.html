@@ -17,13 +17,33 @@
 
 	<div class="contenedor">
 		<div class="burbuja">
-		
-			<h1>{{unidad.titulo}}</h1>
+			
+			<div class="leccion">
+				<div class="titulo {{unidades.titulo}}">
+				<img src="{{unidades.image.url}}" alt="">
+					<span> {{unidades.titulo}}</span>
+				</div>
 
-
-			{% for item in lecciones %}
-				<a href="{% url 'practica' unidad=unidad.titulo leccion=item.pk %}">{{item.titulo}}</a>
-			{% endfor %}
+				<div class="burbuja-secciones">
+					{% for item in lecciones %}
+						<div class="secciones">
+							<span href="">leccion {{ forloop.counter }} de {{ lecciones|length }}</span>
+							
+							<p>
+							
+							{% for palabras in item.palabra_set.all%}
+								{{ palabras }}
+								{% if item.palabra_set.count != forloop.counter%}
+								,
+								{% endif %}
+							{% endfor %}
+							</p>
+							
+							<a href="{% url 'practica' unidad=unidades.titulo leccion=item.pk %} " class="{{unidades.titulo}}">Aprender</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 		
 		</div>
 		

@@ -28,13 +28,15 @@ def perfil(request):
 	return render(request, template, {})
 
 @login_required
-def lecciones(request, pk):
+def detalle_unidad(request, unidad):
 	template = 'dashboard/lecciones.html'
-	get_object_or_404(Unidad, pk=pk)
+	get_object_or_404(Unidad, titulo=unidad)
 
-	unidad = Unidad.objects.get(pk=pk)
-	lecciones = unidad.leccion_set.all()
-	return render(request, template, {'unidad':unidad, 'lecciones':lecciones})
+	unidades = Unidad.objects.get(titulo=unidad)
+	lecciones = unidades.leccion_set.filter(unidad=unidades)
+	palabras = Palabra.objects.filter(leccion=lecciones[0])
+	
+	return render(request, template, {'unidades':unidades, 'lecciones':lecciones, 'palabras':palabras})
 
 @login_required
 def practica(request, unidad, leccion):

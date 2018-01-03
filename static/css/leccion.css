@@ -1,1 +1,68 @@
-leccion.css
+@import url('base/base.css');
+@import url('base/nav.css');
+@import url('dashboard.css');
+@import url(colores.css);
+
+.burbuja{
+	padding: 0;
+	padding-bottom: 0.2em;
+	border-radius: 1em;
+	border-radius: 1em 1em 0 0;
+}
+.titulo{
+	text-align: left;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	color: #333;
+	border-radius: 1em 1em 0 0;
+}
+.titulo > img{
+	width: 72px;
+	height: 72px;
+	padding: 1em;
+}
+.titulo > span{
+	font-size: 1.5em;
+	text-transform: lowercase;
+}
+.burbuja-secciones{
+	margin: 0.5em 0;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.secciones{
+	border-radius: .8em;
+	background: white;
+	margin: 0.8em;
+	padding: 0.8em;
+	box-shadow: 0 0 0.3em #d8d8d8;
+}
+
+.secciones > span{
+	background: none;
+	display: block;
+	margin: 1em;
+	padding: 0.5em;
+	font-size: 1em;
+	font-weight: bold;
+	color: #333;
+}
+
+.secciones > p{
+	margin: 0.2em;
+	padding: 0.2em;
+	color: #a4a4a4;
+}
+
+.secciones > a{
+	display: inline-block;
+	border-radius: 1.5em;
+	margin: 1em;
+	padding: 0.8em;
+	text-transform: lowercase;
+	text-decoration: none;
+	color:white;
+}

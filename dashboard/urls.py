@@ -12,7 +12,7 @@ urlpatterns = [
 
 	url(r'^perfil/$', dashboard.perfil, name='perfil' ),
 	
-	url(r'^leccion/(?P<pk>\d+)$', dashboard.lecciones,
+	url(r'^unidad/(?P<unidad>[^/]+)$', dashboard.detalle_unidad,
                            name='lecciones'),
 	
 	url(r'^practica/(?P<unidad>[^/]+)/(?P<leccion>\d+)$', dashboard.practica,

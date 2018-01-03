@@ -1,8 +1,11 @@
 @import url('base/base.css');
 @import url('base/nav.css');
+@import url(fontello.css);
+@import url(colores.css);
 
 header{
-	background: #0088CC;
+	background:  #3498db;
+	box-shadow: none;
 }
 body{
 	background:#f2f2f2;
@@ -59,14 +62,12 @@ body{
 }
 
 .navegacion_perfil li span {
-	transform: all;
-	transform-
 }
 
 .navegacion_perfil li ul::before {
 	content:"";
 	left: 40%;
-	top: -3%;
+	top: -5%;
 	position: absolute;
 	width: 0;
 	height: 0;
@@ -86,6 +87,7 @@ body{
 	width: 11em;
 	max-width: 11em;
 	margin-left: -.2em;
+	
 }
 .navegacion_perfil li:hover > ul {
 	display:block;
@@ -130,20 +132,36 @@ body{
 .texto{
 	padding: 1em;
 	text-align: left;
-	font-size: 1em;
+	font-size: 1.5em;
 	color: #333;
 }
 .nivel{
-	font-size: 0.8em;
+	font-size: 0.5em;
 }
 
 .seccion-unidad{
 	margin: 1em;
 	display: inline-block;
-	max-width: 10em;
+	max-width: 7em;
 	transition: all;
 	transition-duration: 0.3s;
+	position: relative;
 }
+.seccion-unidad:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	left:50%;
+	bottom: 0;
+	height: 3px;
+	background: #0088CC;
+	transition: all 0.3s;
+}
+.seccion-unidad:hover:before {
+	width: 100%;
+	left: 0;
+}
+
 .seccion-unidad > a, .seccion-unidad > span{
 	margin: 0.3em;
 	display: block;
@@ -152,15 +170,20 @@ body{
 	text-decoration: none;
 	color: #333;
 }
-.seccion-unidad:hover{
-	background:#F2F2F2;
+.seccion-unidad:hover > .imagen-seccion{
+	background:rgba(255,102,0,0.5);
 	border-radius: 0.7em;
 }
 
 .imagen-seccion{
-	max-width: 114px;
-	width: 114px;
-	max-height: 114px;
-	height: 114px;
+	max-width: 80px;
+	width: 80px;
+	max-height: 80px;
+	height: 80px;
 	margin: 0.2em;
+	padding: 0.3em;
+	border-radius: 50%;
+}
+.icon-diamond{
+	white-space: pre;
 }

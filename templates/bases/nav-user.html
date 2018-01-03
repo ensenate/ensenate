@@ -13,7 +13,7 @@
 						<div class="datos-usuario">
 							<span><img src="{{request.user.image.url}}" alt="" width="48px" height="48px"></span>
 							<span class="usuario" >{{request.user.username}}</span>
-							<span>G {{request.user.gemas}}</span>
+							<span class="icon-diamond"> {{request.user.gemas}}</span>
 						</div>
 							<ul>
 								<li><a href="{% url 'perfil' %}">perfil</a></li>
