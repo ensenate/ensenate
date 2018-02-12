@@ -51,4 +51,3 @@ def practica(request, unidad, leccion):
 	
 
 	return render(request, template, {'lecciones':lecciones, 'unidades':unidades, 'palabras':palabras})
-

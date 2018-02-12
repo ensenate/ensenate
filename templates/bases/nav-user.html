@@ -11,13 +11,13 @@
 					<ul class="navegacion_perfil">
 						<li class="li-principal">
 						<div class="datos-usuario">
-							<span><img src="{{request.user.image.url}}" alt="" width="48px" height="48px"></span>
-							<span class="usuario" >{{request.user.username}}</span>
-							<span class="icon-diamond"> {{request.user.gemas}}</span>
+							<span><img src="{{user.image.url}}" alt="" width="48px" height="48px"></span>
+							<span class="usuario" >{{user.username}}</span>
+							<span class="icon-diamond"> {{user.gemas}}</span>
 						</div>
 							<ul>
 								<li><a href="{% url 'perfil' %}">perfil</a></li>
-								<li><a href="">configuracion</a></li>
+								<li><a href="{% url 'conf_cuenta' %}">configuracion</a></li>
 								<li><a href="">ayuda</a></li>
 								<li><a href="{% url 'logout' %}">cerrar sesion</a></li>
 							</ul>

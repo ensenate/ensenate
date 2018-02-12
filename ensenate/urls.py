@@ -9,4 +9,5 @@ urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'', include('principal.urls')),
 	url(r'', include('dashboard.urls')),
+	url(r'', include('usuarios.urls')),
 ]

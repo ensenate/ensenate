@@ -1,0 +1,68 @@
+{% extends 'bases/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}	
+	configuracion / {{request.user}}
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+	<link rel="stylesheet" href="{% static 'css/configuracion.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+
+{% include 'bases/nav-user.html' %}
+
+<div class="contenedor">
+
+	<div class="burbuja-grande">
+	
+	<div class="burbuja-izquierda">
+		
+		<form  role="form" action="" method="POST"> {% csrf_token %}
+				
+				<div class="titulo-boton">
+					<span>Configuracion de la contraseña</span>
+					<input type="submit" value="Guardar Cambios">
+				</div>
+
+				<div class="inputs">
+
+					<div class="campo-inputs">				
+						<label for="id_old_password">Contraseña Actual</label>
+						{{form.old_password}}
+					</div>
+	
+					<div class="campo-inputs">				
+						<label for="id_new_password1">Nueva Contraseña</label>
+						{{form.new_password1}}
+					</div>
+
+					<div class="campo-inputs">				
+						<label for="id_new_password2">Confirmar Contraseña</label>
+						{{form.new_password2}}
+					</div>
+
+				</div>
+			
+				{% if mensaje %}
+					<div class="campo-inputs">
+						<span class="mensaje">{{ mensaje }}</span>
+					</div>
+				{% endif %}
+		</form>
+
+	</div>
+
+	{% include 'bases/aside-user.html' %}
+	
+	</div>
+
+</div>
+
+
+{% endblock %}

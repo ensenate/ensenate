@@ -1,0 +1,68 @@
+{% extends 'bases/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}	
+	configuracion / {{request.user}}
+{% endblock %}
+
+{% block static %}
+		<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+		<link rel="stylesheet" href="{% static 'css/configuracion.css' %}">
+
+{% endblock %}
+
+
+
+{% block body %}
+
+{% include 'bases/nav-user.html' %}
+
+<div class="contenedor">
+
+	<div class="burbuja-grande">
+		
+			<div class="burbuja-izquierda">
+
+				<form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> {% csrf_token %}
+				
+					<div class="titulo-boton">
+						<span>Perfil</span>
+						<input type="submit" value="Guardar Cambios">
+					</div>
+					
+					<div class="inputs">
+
+						<div class="campo-inputs">
+							<label for="id_first_name">{{form.first_name.label}}</label>
+							{{form.first_name}}
+						</div>
+
+						<div class="campo-inputs">
+							<label for="id_last_name">{{form.last_name.label}}</label>
+							{{form.last_name}}
+						</div>
+
+						<div class="campo-inputs">
+							<label for="id_biografia">{{form.biografia.label}}</label>
+							{{form.biografia}}
+						</div>					
+						
+						<div class="campo-inputs">
+							<span class="fecha"> Aprendiendo desde {{ request.user.fecha_inicio }}</span>
+						</div>
+					</div>
+					
+				
+				</form>
+
+			</div>
+
+	
+	{% include 'bases/aside-user.html' %}
+
+	</div>
+
+</div>
+
+{% endblock %}

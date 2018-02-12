@@ -54,7 +54,7 @@ class crear_usuario_form(UserCreationForm):
 	password2 = forms.CharField( 
 		label = "Confirmar Contraseña",
 		error_messages = { 'required': 'este campo es obligatorio' },
-		widget = forms.PasswordInput(attrs={ 'class': 'form-control', 'type': 'password','placeholder':'confirma tu contraseña'} ),
+		widget = forms.PasswordInput( attrs = { 'class': 'form-control', 'type': 'password','placeholder':'confirma tu contraseña'} ),
 		)
 
 	class Meta:

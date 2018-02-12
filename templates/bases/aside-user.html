@@ -1,0 +1,17 @@
+<div class="burbuja-derecha">
+	<ul class="list-init">
+		<li>
+			<div class="perfil-list">
+				<span><img src="{{user.image.url}}" alt="" width="48px" height="48px"></span>
+				
+				<span class="usuario-list" >{{user.username}} <br/>
+				<a href="{% url 'perfil' %}">ver tu perfil</a>
+				</span>
+			</div>
+		</li>
+
+		<li class="opcion-list"><a class=" {%if  request.path == '/configuracion/' %}activo{% endif %} " href="{% url 'conf_cuenta' %}">Cuenta</a></li>
+		<li class="opcion-list"><a class=" {%if  request.path == '/configuracion/perfil' %}activo{% endif %} " href="{% url 'conf_perfil' %}">Perfil</a></li>
+		<li class="opcion-list"><a class=" {%if  request.path == '/configuracion/password' %}activo{% endif %} " href="{% url 'conf_pass' %}">Contraseña</a></li>
+	</ul>
+</div>

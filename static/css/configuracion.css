@@ -1,0 +1,150 @@
+.burbuja-grande{
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+}
+
+.burbuja-izquierda, .burbuja-derecha{
+	background: white;
+	padding: 2em;
+	border-radius: 10px;
+	width: 60%;
+}
+
+.burbuja-derecha{
+	width: 25%;
+	max-height: 15em;
+}
+
+.titulo-boton{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.titulo-boton > span{
+	font-size: 1.5em;
+	color: #333;
+}
+
+.titulo-boton > input{
+	border: none;
+	padding: 1em 1.5em;
+	border-radius: 20px;
+	background: #3498db;
+	color: white;
+	font-size: 0.7em;
+	font-weight: bold;
+}
+
+.titulo-boton > input:hover{
+	cursor: pointer;
+}
+
+
+.inputs{
+	display: block;
+	width: 80%;
+
+	margin: 1em auto;
+	padding: .5em;
+}
+
+.campo-inputs{
+	margin: 1em;
+	align-items: center;
+	display: flex;
+}
+.campo-inputs > label{
+	background: none;
+	width: 10em;
+	color: #333;
+	display: block;
+	font-size: 1em;
+}
+
+.campo-inputs > input[type="text"], .campo-inputs > input[type="email"], .campo-inputs > input[type="password"]{
+	background: none;
+	width: 20em;
+	color: #333;
+	padding: .6em; 
+	font-size: .8em;
+	border: 2px solid #d8d8d8;
+	border-radius: 10px
+}
+
+
+.campo-inputs > input[type="file"]{
+	color: #979a9a;
+}
+
+.mensaje{
+	background: rgba(88,241,141,0.5);
+	width: 100%;
+	text-align: center;
+	padding: .5em;
+	border: 1px solid #1e8449;
+	border-radius: 10px;
+	color: #1e8449;
+	font-size: 0.8em;
+}
+
+.list-init{
+	list-style: none;
+}
+.perfil-list{
+	display: flex;
+	align-items: center;
+}
+
+.usuario-list{
+	font-size: 1.2em;
+	color: #333;
+	margin: 10px;
+}
+
+
+.usuario-list > a{
+	font-size: .8em;
+	color: #3498db;
+	text-decoration: none;
+}
+
+.list-init > li{
+	margin: 10px;
+}
+
+.list-init > .opcion-list{
+	margin-top: 15px;
+}
+.opcion-list > a{
+	display: block;
+	padding: 0.6em 0.7em;
+	border-radius: 20px;
+	text-decoration: none;
+	color: #333;
+	transform: all;
+	transition-duration: .2s;
+}
+
+.opcion-list > a:hover{
+	background:  #ecf0f1;
+}
+
+.activo{
+	background:  #ecf0f1;
+}
+
+.campo-inputs > textarea{
+	padding: .6em;
+	color: #333;	
+	font-size: .8em;
+	resize: none;
+	border: 2px solid #d8d8d8;
+	border-radius: 10px;
+}
+
+.campo-inputs > .fecha{
+	color: #333;
+	font-size: .8em;
+}
