@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <div class="seccion-unidad">
-	<span class="seccion-prueba" href="{% url 'lecciones' unidades.pk %}"> 
-		{{ unidades.titulo }}
+	<span class="seccion-bloqueado {{unidades.titulo}}" href="{% url 'lecciones' unidades.pk %}"> 
 		<img class="imagen-seccion" src="{% static unidades.image.url %}"/>
+		{{ unidades.titulo }}
 	</span>
 </div>

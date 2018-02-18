@@ -52,6 +52,12 @@
 							<span class="fecha"> Aprendiendo desde {{ request.user.fecha_inicio }}</span>
 						</div>
 					</div>
+
+					{% if mensaje %}
+						<div class="campo-inputs">
+							<span class="mensaje">{{ mensaje }}</span>
+						</div>
+					{% endif %}
 					
 				
 				</form>

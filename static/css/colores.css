@@ -1,19 +1,59 @@
-.Basico{
-	background: #2874a6;
+.basico{
+	background: #1DB4E3;
 }
 
-.Saludos{
- 	background:#17a589;
+.saludos{
+ 	background: #A2F173;
 }
 
-.Escuela{
-	background: #b03a2e;
+.hogar{
+	background: #DA83EB;
 }
 
-.Numeros{
-	background: #b9770e;
+.objetos{
+	background: #F86985;
 }
 
-.Verbos{
-	background:  #af7ac5;
+.escuela{
+	background: #FFDB7D;
+}
+
+.familia{
+	background: #FE89B5;
+}
+
+.numeros{
+ 	background: #658DE5;
+}
+
+.verbos{
+	background: #222222;
+}
+
+.animales{
+	background: #1f618d;
+}
+
+.colores{
+	background: #b7950b;
+}
+
+.expresion{
+	background: #FE2E9A;
+}
+
+.casa{
+ 	background: #088A4B;
+}
+
+.cosas{
+	background: #FF4000;
+}
+
+.diversion{
+	background: #0489B1;
+}
+
+.profesion{
+	background: #B40431;
 }

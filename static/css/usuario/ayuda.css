@@ -1,0 +1,42 @@
+.texto-ayuda{
+	margin: 1em;
+	text-align: left;
+}
+.texto-ayuda > .titulo{
+	
+	display: block;
+	font-size: 1.5em;
+	color: #333;
+}
+
+.titulo-parrafo{
+	color: #a6acaf;
+	padding: 0.5em 0em;
+	display: block;
+	margin: 10px auto;
+}
+
+.parrafo-descripcion{
+	color: #a6acaf;
+	text-align: justify;
+}
+
+.dudas{
+	padding: 1em;
+}
+.dudas > strong{
+	color: #333;
+}
+
+.link-contacto{
+	display: block;
+	padding: 1em;
+}
+
+.link-contacto > a{
+	background: #3498db;
+	padding: .5em 1em;
+	border-radius: 20px;
+	color: white;
+	text-decoration: none;
+}

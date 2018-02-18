@@ -7,12 +7,20 @@
 {% endblock %}
 
 {% block static %}
+
 	<link rel="stylesheet" href="{% static 'css/contactanos.css' %}">
+	{% if request.user.is_authenticated %}
+	<link rel="stylesheet" href="{% static 'css/contacto-usuario-activo.css' %}">
+	{% endif %}
 {% endblock %}
 
 {% block body %}
 
-{% include 'bases/nav.html' %}
+{% if request.user.is_authenticated %}
+	{% include 'bases/nav-user.html' %}
+{% else %}
+	{% include 'bases/nav.html' %}
+{% endif %}
 
 	<div class="contenedor">
 		<div class="burbuja">
@@ -27,6 +35,9 @@
 		
 		</div>
 	</div>
-{% include 'bases/footer.html' %}
+
+{% if not request.user.is_authenticated %}
+	{% include 'bases/footer.html' %}
+{% endif %}
 
 {% endblock %}

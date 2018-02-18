@@ -1,0 +1,52 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / ayuda
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+	<link rel="stylesheet" href="{% static 'css/usuario/ayuda.css' %}">
+{% endblock %}
+
+{% block body %}
+
+{% include 'bases/nav-user.html' %}
+
+<div class="contenedor">
+	<div class="burbuja">
+	
+	<div class="texto-ayuda">
+		<span class="titulo">Ayuda</span>
+	</div>
+
+	<div class="texto-ayuda">
+		<strong class="titulo-parrafo">¿Quienes Somos?</strong>
+
+		<p class="parrafo-descripcion">
+			Aplicacion web de caracter educativo basado principalmente en promover el Aprendizaje del Lenguaje de Señas tiendo como objetivo homologar y elevar la calidad de los procesos de enseñanza y aprendizaje del lenguaje de señas, en los programas educativos curriculares de los niveles bajo, medio y superior, que se imparten en distintas modalidades educativas.
+		</p>
+	</div>
+
+	<div class="texto-ayuda">
+		<strong class="titulo-parrafo">¿Como Funciona Los Puntos y los Niveles?</strong>
+
+		<p class="parrafo-descripcion">
+			Obtienes puntos cada vez que terminas una tarea que mejora tus habilidades en el lenguaje.<br/>Subes de nivel cuando acumulas el número necesario de puntos para cada nivel. Actualmente tenemos 5 niveles y siempre puedes ver en tu página de inicio qué tan cerca estás de llegar al próximo nivel.
+		</p>
+
+	</div>	
+	
+	<div class="dudas">
+		<strong>¿Aun Tienes dudas?</strong>
+
+		<div class="link-contacto">
+			<a href="{% url 'contactanos' %}">contactanos</a>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+@import url('fontello.css');
+
+header{
+	background:  #3498db;
+	box-shadow: none;
+}
+
+.usuario-activo{
+	display: flex;
+	align-items: center; 
+} 
+
+.navegacion .enlaces-derecha .activo{
+	background: rgba(0,0,0,0.1);
+	border-radius: 15px;
+	font-weight: normal;
+}
+.enlaces-derecha > a, .enlaces-derecha > ul {
+	margin: 0.5em; 
+}
+
+.navegacion .enlaces-derecha a:hover{
+	color: #333;
+}
+
+.navegacion_perfil{
+	display: inline-block;
+	list-style: none;
+	width: 11em;
+	max-width: 11em;
+	/*margin: auto 0.7em;
+	text-align: center;
+	padding: 0.5em;
+*/}
+.datos-usuario{
+	display: flex;
+	align-items: center;
+}
+
+.datos-usuario > span{
+	color: white;
+	margin: .2em;
+	padding: 0.1em;
+}
+
+.datos-usuario > span > img{
+	width: 2em;
+	height: 2em;
+}
+.navegacion_perfil > .li-principal{
+	list-style: none;
+	padding: 0.2em
+}
+.navegacion_perfil li span {
+}
+
+.navegacion_perfil li ul::before {
+	content:"";
+	left: 40%;
+	top: -5%;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-bottom: 0.5em solid white;
+	border-right: .8em solid transparent;
+	border-left: .8em solid transparent;
+}
+
+.navegacion_perfil li ul {
+	display:none;
+	position:absolute;
+	
+	margin-top: 0.3em;
+	text-align: left;
+	border-radius: 0.3em;
+	background: white;
+	width: 11em;
+	max-width: 11em;
+	margin-left: -.2em;
+	
+}
+.navegacion_perfil li:hover > ul {
+	display:block;
+}
+.navegacion_perfil li ul li {
+	display: block;
+	margin: 0.2em auto;
+}
+.navegacion_perfil li ul li a{
+	display: block;
+	padding: 0.5em;
+	color: #0088CC;
+	font-size: 1em;
+	text-decoration: none;
+	transition: all;
+	transition-duration: 0.1s;
+}
+.navegacion .enlaces-derecha .menu_inicio{
+	color: white;
+}
+
+.navegacion .enlaces-derecha .menu_inicio:hover{
+	color: white;	
+}
+
+.navegacion_perfil li ul li a:hover{
+	background: #0088cc;
+}
+.navegacion .enlaces-derecha a:hover{
+	color: white;
+}

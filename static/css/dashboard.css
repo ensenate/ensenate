@@ -1,7 +1,7 @@
 @import url('base/base.css');
 @import url('base/nav.css');
-@import url(fontello.css);
-@import url(colores.css);
+@import url('fontello.css');
+@import url('colores.css');
 
 header{
 	background:  #3498db;
@@ -91,6 +91,7 @@ body{
 }
 .navegacion_perfil li:hover > ul {
 	display:block;
+	box-shadow: 0 0 2px #d0d3d4;
 }
 .navegacion_perfil li ul li {
 	display: block;
@@ -103,7 +104,7 @@ body{
 	font-size: 1em;
 	text-decoration: none;
 	transition: all;
-	transition-duration: 0.15s;
+	transition-duration: 0.1s;
 }
 
 .navegacion .enlaces-derecha .menu_inicio{
@@ -111,7 +112,10 @@ body{
 }
 
 .navegacion .enlaces-derecha .menu_inicio:hover{
-	color: white;	
+	background: rgba(0,0,0,0.1);
+	border-radius: 15px;
+	font-weight: normal;
+	color: white;
 }
 
 .navegacion_perfil li ul li a:hover{
@@ -128,62 +132,140 @@ body{
 	background: white;
 	border-radius: 10px;
 	padding: 0.5em;
+	box-shadow: 0 0 5px #d0d3d4;
 }
-.texto{
-	padding: 1em;
+.texto-titulo{
+	margin: 1em;
 	text-align: left;
 	font-size: 1.5em;
 	color: #333;
+	text-transform: uppercase;
 }
 .nivel{
-	font-size: 0.5em;
+	font-size: 0.6em;
+	color: #d0d3d4;
+	text-transform: uppercase;
 }
 
 .seccion-unidad{
-	margin: 1em;
+	margin: 1.5em;
 	display: inline-block;
 	max-width: 7em;
 	transition: all;
 	transition-duration: 0.3s;
 	position: relative;
 }
-.seccion-unidad:before {
-	content: "";
-	position: absolute;
-	width: 0;
-	left:50%;
-	bottom: 0;
-	height: 3px;
-	background: #0088CC;
-	transition: all 0.3s;
-}
-.seccion-unidad:hover:before {
-	width: 100%;
-	left: 0;
-}
 
-.seccion-unidad > a, .seccion-unidad > span{
-	margin: 0.3em;
+.seccion-unidad > .seccion-desbloqueado, .seccion-unidad > .seccion-bloqueado{
 	display: block;
 	text-align: center;
-	font-size: 1em;
+	font-size: 0.8em;
 	text-decoration: none;
-	color: #333;
+	color:  #616a6b;
+	text-transform: uppercase;
 }
-.seccion-unidad:hover > .imagen-seccion{
-	background:rgba(255,102,0,0.5);
-	border-radius: 0.7em;
+.seccion-desbloqueado > .imagen-seccion{
+	transition: all;
+	transition-delay: 0.3s;
+	transition-duration: 0.3s;
 }
 
 .imagen-seccion{
-	max-width: 80px;
-	width: 80px;
-	max-height: 80px;
-	height: 80px;
-	margin: 0.2em;
-	padding: 0.3em;
+	max-width: 84px;
+	width: 72px;
+	max-height: 84px;
+	height: 72px;
+	padding: 0.5em;
 	border-radius: 50%;
 }
+
 .icon-diamond{
 	white-space: pre;
+}
+
+hr{
+	margin: 2.5em .5em;
+	border: 1px solid #eaecee;
+}
+
+.seccion-desbloqueado:hover > .imagen-seccion{
+	border-radius: 1em 1em 0 0;
+}
+
+.seccion-desbloqueado > span{
+	width: 100%;
+	border-radius: 50% 50% 100% 100%;
+	display:block;
+	background: none;
+	padding: 0.5em 0em 0.5em 0em;
+	margin-top: -0.2em;
+	transition: all;
+	transition-delay: 0.3s;
+	transition-duration: 0.3s;
+}
+
+
+.seccion-desbloqueado:hover > span{
+	color: white;
+	border-radius: 0 0 1em 1em;
+}
+
+.seccion-desbloqueado:hover > span.basico{
+	background: #1DB4E3;
+}
+
+.seccion-desbloqueado:hover > span.saludos{
+	background:#A2F173;
+}
+
+.seccion-desbloqueado:hover > span.hogar{
+	background: #DA83EB;
+}
+
+.seccion-desbloqueado:hover > span.objetos{
+	background: #F86985;
+}
+
+.seccion-desbloqueado:hover > span.escuela{
+	background: #FFDB7D;
+}
+
+.seccion-desbloqueado:hover > span.familia{
+	background: #FE89B5;
+}
+
+.seccion-desbloqueado:hover > span.numeros{
+	background: #658DE5;
+}
+
+.seccion-desbloqueado:hover > span.verbos{
+	background: #222222;
+}
+
+.seccion-desbloqueado:hover > span.animales{
+	background: #1f618d;
+}
+
+.seccion-desbloqueado:hover > span.colores{
+	background: #b7950b;
+}
+
+.seccion-desbloqueado:hover > span.expresion{
+	background: #FE2E9A;
+}
+
+.seccion-desbloqueado:hover > span.casa{
+	background: #088A4B;
+}
+
+.seccion-desbloqueado:hover > span.cosas{
+	background: #FF4000;
+}
+
+.seccion-desbloqueado:hover > span.diversion{
+	background: #0489B1;
+}
+
+.seccion-desbloqueado:hover > span.profesion{
+	background: #B40431;
 }

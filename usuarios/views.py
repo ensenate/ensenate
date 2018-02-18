@@ -79,3 +79,8 @@ def conf_pass(request):
 #		mensaje = ''
 
 	return render(request, template, {'form':form, 'mensaje':mensaje})
+
+@login_required
+def ayuda(request):
+	template = 'usuario/ayuda.html'
+	return render(request, template,{})	

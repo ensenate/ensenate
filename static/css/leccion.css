@@ -1,7 +1,7 @@
 @import url('base/base.css');
 @import url('base/nav.css');
 @import url('dashboard.css');
-@import url(colores.css);
+@import url('colores.css');
 
 .burbuja{
 	padding: 0;
@@ -23,9 +23,11 @@
 	padding: 1em;
 }
 .titulo > span{
-	font-size: 1.5em;
-	text-transform: lowercase;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	color: white;
 }
+
 .burbuja-secciones{
 	margin: 0.5em 0;
 	padding: 0.5em;
@@ -38,7 +40,7 @@
 	background: white;
 	margin: 0.8em;
 	padding: 0.8em;
-	box-shadow: 0 0 0.3em #d8d8d8;
+	box-shadow: 0 0 0.3em #d0d3d4;
 }
 
 .secciones > span{
@@ -61,8 +63,15 @@
 	display: inline-block;
 	border-radius: 1.5em;
 	margin: 1em;
-	padding: 0.8em;
+	padding: 0.4em 0.8em;
 	text-transform: lowercase;
 	text-decoration: none;
 	color:white;
+	transition: all;
+	transition-delay: .3s;
+	transition-duration: .3s;
+}
+
+.secciones > a:hover{
+	background: #3498DB;
 }
