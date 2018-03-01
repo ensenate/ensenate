@@ -214,7 +214,7 @@ hr{
 	background: #1DB4E3;
 }
 
-.seccion-desbloqueado:hover > span.saludos{
+.seccion-desbloqueado:hover > span.personas{
 	background:#A2F173;
 }
 
@@ -226,7 +226,7 @@ hr{
 	background: #F86985;
 }
 
-.seccion-desbloqueado:hover > span.escuela{
+.seccion-desbloqueado:hover > span.comida{
 	background: #FFDB7D;
 }
 
@@ -234,7 +234,7 @@ hr{
 	background: #FE89B5;
 }
 
-.seccion-desbloqueado:hover > span.numeros{
+.seccion-desbloqueado:hover > span.cocina{
 	background: #658DE5;
 }
 
