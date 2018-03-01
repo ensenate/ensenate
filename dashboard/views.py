@@ -10,16 +10,53 @@ from django.views.generic import TemplateView
 #prueba
 from .models import Unidad, Leccion, Palabra#Category, Item#
 
+#prueba 2 
+from usuarios.models import DatosUnidadUsuario, DatosLeccionUsuario
+
+def  verificar_unidades(usuario):
+	if not DatosUnidadUsuario.objects.filter(usuario=usuario):
+		unidades = Unidad.objects.all()
+
+		x=0
+		
+		for unidad in unidades:
+			x = x + 1
+			if x <= 3:
+				bloqueado = False
+			else:
+				bloqueado = True
+			
+			unidad_usuario = DatosUnidadUsuario(usuario=usuario, unidad=unidad, bloqueado=bloqueado)
+			unidad_usuario.save()
+		else:
+			return
+
+#esta funcion no esta al 100% ojo hay que agregar p'rimero todas las lecciones a la base de datos y luego asi agregar a la base de datos todo
+def verificar_lecciones(usuario):
+	if not DatosLeccionUsuario.objects.filter(usuario=usuario):
+		unidades = Unidad.objects.all()
+
+		for unidad in unidades:
+
+			for leccion in unidad.leccion_set.filter(unidad=unidad):
+				print(unidad.titulo + " - " + leccion.titulo)
+
+
 
 @login_required
 def inicio(request):
 	template = 'dashboard/dashboard.html'
+	
+	verificar_unidades(request.user)
+	verificar_lecciones(request.user)
 
 	unidades = Unidad.objects.all()
 
 	context = {
 		'unidades':unidades,
 	}
+
+
 	return render(request,template,context)
 
 @login_required

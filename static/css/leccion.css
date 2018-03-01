@@ -30,16 +30,13 @@
 
 .burbuja-secciones{
 	margin: 0.5em 0;
-	padding: 0.5em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 .secciones{
 	border-radius: .8em;
 	background: white;
 	margin: 0.8em;
 	padding: 0.8em;
+	display: inline-block;
 	box-shadow: 0 0 0.3em #d0d3d4;
 }
 

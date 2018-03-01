@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_protect
 from usuarios.models import User
 from .models import Contacto
 
-
 #authenticacion
 from django.contrib.auth import authenticate 
 from django.contrib.auth import login
@@ -26,6 +25,10 @@ from django.contrib.auth.tokens import default_token_generator
 #urls
 from django.core.urlresolvers import reverse
 
+
+#prueba de usuarios
+from usuarios.models import DatosUnidadUsuario
+from dashboard.models import Unidad
 
 # Create your views here.
 
@@ -48,7 +51,21 @@ def registrar_usuario(request):
             			password = form.cleaned_data.get('password1')
             			
             			user = authenticate(username=usuario, password=password)
-            			
+
+            			unidades = Unidad.objects.all()
+
+            			x=0
+
+            			for unidad in unidades:
+            				x = x + 1
+            				if x <= 3:
+            					bloqueado = False
+            				else:
+            					bloqueado = True
+            				
+            				unidad_usuario = DatosUnidadUsuario(usuario=user, unidad=unidad, bloqueado= bloqueado)
+            				unidad_usuario.save()
+
             			login(request, user)
             			return redirect('dashboard')
 	else:

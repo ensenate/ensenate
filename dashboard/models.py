@@ -5,7 +5,6 @@ from django.contrib.auth.models import  AbstractUser
 
 class Unidad(models.Model):
 	titulo = models.CharField(max_length=30, blank=False)
-	bloqueado = models.BooleanField(default=True)
 	image = models.ImageField(upload_to='curso/unidades/')
 
 	def __str__(self):

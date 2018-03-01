@@ -3,7 +3,6 @@ from django.contrib import admin
 # Register your models here.
 #
 from .models import Unidad, Leccion, Palabra#Category, Item
-from usuarios.models import User
 
 
 class Palabraline(admin.TabularInline):
@@ -19,5 +18,3 @@ class LeccionAdmin(admin.ModelAdmin):
 admin.site.register(Unidad)
 admin.site.register(Leccion, LeccionAdmin)
 admin.site.register(Palabra)
-
-admin.site.register(User)
