@@ -30,13 +30,11 @@
 							<span>leccion {{ forloop.counter }} de {{ lecciones|length }}</span>
 							
 							<p>
+								En esta leccion aprenderas las siguientes palabras: <br/> <br/>
 							
-							{% for palabras in item.palabra_set.all%}
-								{{ palabras }}
-								{% if item.palabra_set.count != forloop.counter%}
-								,
-								{% endif %}
-							{% endfor %}
+								{% for palabras in item.palabra_set.all%}
+									{{ palabras }}{% if item.palabra_set.count != forloop.counter%},{% endif %}
+								{% endfor %}
 							</p>
 							
 							<a href="{% url 'practica' unidad=unidades.titulo leccion=item.pk %} " class="{{unidades.titulo}}">Aprender</a>

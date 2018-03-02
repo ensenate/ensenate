@@ -33,13 +33,25 @@ def  verificar_unidades(usuario):
 
 #esta funcion no esta al 100% ojo hay que agregar p'rimero todas las lecciones a la base de datos y luego asi agregar a la base de datos todo
 def verificar_lecciones(usuario):
+	
+	x=0
+
 	if not DatosLeccionUsuario.objects.filter(usuario=usuario):
 		unidades = Unidad.objects.all()
+
+		x = x + 1
+		if x <= 3:
+			bloqueado = False
+		else:
+			bloqueado = True
 
 		for unidad in unidades:
 
 			for leccion in unidad.leccion_set.filter(unidad=unidad):
-				print(unidad.titulo + " - " + leccion.titulo)
+				leccion_usuario = DatosLeccionUsuario(usuario=usuario, unidad=unidad, leccion=leccion, bloqueado=bloqueado)
+				leccion_usuario.save()
+	else:
+		return
 
 
 
