@@ -22,6 +22,7 @@ class Leccion(models.Model):
 class Palabra(models.Model):
 	titulo = models.CharField(max_length=30, blank=False)
 	image = models.ImageField(upload_to='curso/palabras/')
+	image2 = models.ImageField(default='curso/palabras/no-imagen.jpg', null=True, blank=True, upload_to='curso/palabras/')
 	
 	leccion = models.ForeignKey(Leccion)
 	

@@ -4,16 +4,48 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"transi",
+				"transition-duration"
+			],
+			[
+				"tra",
+				"transition-duration"
+			],
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"bo",
+				"boton_play"
+			],
+			[
+				"unidad",
+				"unidad_usuario"
+			],
+			[
 				"inline",
 				"inline-flex"
 			],
 			[
 				"verificar",
 				"verificar_lecciones"
-			],
-			[
-				"unidad",
-				"unidad"
 			],
 			[
 				"uni",
@@ -28,10 +60,6 @@
 				"User_Unidad"
 			],
 			[
-				"border",
-				"border-radius"
-			],
-			[
 				"transition",
 				"transition-duration"
 			],
@@ -40,16 +68,8 @@
 				"transition"
 			],
 			[
-				"margin",
-				"margin-top"
-			],
-			[
 				"paddin",
 				"padding-bottom"
-			],
-			[
-				"text",
-				"text-transform"
 			],
 			[
 				"box",
@@ -104,10 +124,91 @@
 	"buffers":
 	[
 		{
+			"file": "templates/dashboard/vista_previa.html",
+			"settings":
+			{
+				"buffer_size": 1098,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/dashboard/vista.css",
+			"settings":
+			{
+				"buffer_size": 1225,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/principal/inicio.html",
+			"settings":
+			{
+				"buffer_size": 2537,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/inicio.css",
+			"settings":
+			{
+				"buffer_size": 1156,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "static/css/leccion.css",
 			"settings":
 			{
-				"buffer_size": 1160,
+				"buffer_size": 1168,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/dashboard.css",
+			"settings":
+			{
+				"buffer_size": 4599,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/dashboard/conf_perfil.html",
+			"settings":
+			{
+				"buffer_size": 1626,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/dashboard/conf_pass.html",
+			"settings":
+			{
+				"buffer_size": 1449,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/dashboard/conf_cuenta.html",
+			"settings":
+			{
+				"buffer_size": 1450,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/base/base.css",
+			"settings":
+			{
+				"buffer_size": 245,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -152,26 +253,39 @@
 	"expanded_folders":
 	[
 		"/home/said/ProyectoEnsenate/ensenate",
+		"/home/said/ProyectoEnsenate/ensenate/dashboard",
+		"/home/said/ProyectoEnsenate/ensenate/dashboard/migrations",
 		"/home/said/ProyectoEnsenate/ensenate/static",
+		"/home/said/ProyectoEnsenate/ensenate/static/css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/base",
+		"/home/said/ProyectoEnsenate/ensenate/templates",
+		"/home/said/ProyectoEnsenate/ensenate/templates/principal",
 		"/home/said/ProyectoEnsenate/ensenate/usuarios"
 	],
 	"file_history":
 	[
-		"/home/said/ProyectoEnsenate/ensenate/dashboard/views.py",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/base/base.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/js/imagen.js",
 		"/home/said/ProyectoEnsenate/ensenate/dashboard/models.py",
-		"/home/said/ProyectoEnsenate/ensenate/usuarios/models.py",
-		"/home/said/Respaldo/firefox.txt",
-		"/home/said/ProyectoEnsenate/ensenate/principal/views.py",
-		"/home/said/ProyectoEnsenate/ensenate/usuarios/admin.py",
-		"/home/said/ProyectoEnsenate/ensenate/dashboard/admin.py",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/configuracion.css",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/dashboard.html",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/colores.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/bases/base.html",
+		"/home/said/ProyectoEnsenate/ensenate/dashboard/views.py",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard/vista.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/principal/inicio.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/usuario/vista.css",
+		"/home/said/ProyectoEnsenate/ensenate/dashboard/urls.py",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/lecciones.html",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/leccion.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/dashboard.html",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/secciones.html",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/secciones-2.html",
+		"/home/said/ProyectoEnsenate/ensenate/usuarios/models.py",
+		"/home/said/ProyectoEnsenate/ensenate/usuarios/admin.py",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/leccion.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/colores.css",
+		"/home/said/Respaldo/firefox.txt",
+		"/home/said/ProyectoEnsenate/ensenate/principal/views.py",
+		"/home/said/ProyectoEnsenate/ensenate/dashboard/admin.py",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/configuracion.css",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/usuario/ayuda.css",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/restablecer-password.css",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/contacto-usuario-activo.css",
@@ -188,8 +302,7 @@
 		"/home/said/pagina web/FalconMasters - Blog de Diseño Web, Tutoriales, Cursos, Recursos, Código.html",
 		"/home/said/FalconMasters - Blog de Diseño Web, Tutoriales, Cursos, Recursos, Código.html",
 		"/home/said/ProyectoEnsenate/ensenate/principal/forms.py",
-		"/home/said/ProyectoEnsenate/ensenate/ensenate/urls.py",
-		"/home/said/ProyectoEnsenate/ensenate/dashboard/urls.py"
+		"/home/said/ProyectoEnsenate/ensenate/ensenate/urls.py"
 	],
 	"find":
 	{
@@ -225,24 +338,109 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "static/css/leccion.css",
+					"file": "templates/dashboard/vista_previa.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1160,
+						"buffer_size": 1098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								631,
-								631
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "static/css/dashboard/vista.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/principal/inicio.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2537,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								300,
+								300
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "static/css/inicio.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
 							]
 						],
 						"settings":
@@ -251,10 +449,183 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "static/css/leccion.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								978,
+								978
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "static/css/dashboard.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2228,
+								2228
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 990.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/dashboard/conf_perfil.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1597,
+								1597
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "templates/dashboard/conf_pass.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1424,
+								1424
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 42.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "templates/dashboard/conf_cuenta.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								408,
+								408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "static/css/base/base.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

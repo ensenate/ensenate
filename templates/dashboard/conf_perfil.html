@@ -19,56 +19,56 @@
 {% include 'bases/nav-user.html' %}
 
 <div class="contenedor">
+	<div class="burbuja-invisible">
+		<div class="burbuja-grande">
+			
+				<div class="burbuja-izquierda">
 
-	<div class="burbuja-grande">
-		
-			<div class="burbuja-izquierda">
-
-				<form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> {% csrf_token %}
-				
-					<div class="titulo-boton">
-						<span>Perfil</span>
-						<input type="submit" value="Guardar Cambios">
-					</div>
+					<form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> {% csrf_token %}
 					
-					<div class="inputs">
-
-						<div class="campo-inputs">
-							<label for="id_first_name">{{form.first_name.label}}</label>
-							{{form.first_name}}
+						<div class="titulo-boton">
+							<span>Perfil</span>
+							<input type="submit" value="Guardar Cambios">
 						</div>
-
-						<div class="campo-inputs">
-							<label for="id_last_name">{{form.last_name.label}}</label>
-							{{form.last_name}}
-						</div>
-
-						<div class="campo-inputs">
-							<label for="id_biografia">{{form.biografia.label}}</label>
-							{{form.biografia}}
-						</div>					
 						
-						<div class="campo-inputs">
-							<span class="fecha"> Aprendiendo desde {{ request.user.fecha_inicio }}</span>
-						</div>
-					</div>
+						<div class="inputs">
 
-					{% if mensaje %}
-						<div class="campo-inputs">
-							<span class="mensaje">{{ mensaje }}</span>
+							<div class="campo-inputs">
+								<label for="id_first_name">{{form.first_name.label}}</label>
+								{{form.first_name}}
+							</div>
+
+							<div class="campo-inputs">
+								<label for="id_last_name">{{form.last_name.label}}</label>
+								{{form.last_name}}
+							</div>
+
+							<div class="campo-inputs">
+								<label for="id_biografia">{{form.biografia.label}}</label>
+								{{form.biografia}}
+							</div>					
+							
+							<div class="campo-inputs">
+								<span class="fecha"> Aprendiendo desde {{ request.user.fecha_inicio }}</span>
+							</div>
 						</div>
-					{% endif %}
+
+						{% if mensaje %}
+							<div class="campo-inputs">
+								<span class="mensaje">{{ mensaje }}</span>
+							</div>
+						{% endif %}
+						
 					
-				
-				</form>
+					</form>
 
-			</div>
+				</div>
 
-	
-	{% include 'bases/aside-user.html' %}
+		
+		{% include 'bases/aside-user.html' %}
 
+		</div>
 	</div>
-
 </div>
 
 {% endblock %}

@@ -1,0 +1,83 @@
+@import url('../base/base.css');
+@import url('../base/nav.css');
+@import url('../dashboard.css');
+
+
+.burbuja{
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+	display: inline-block;
+}
+
+.titulos {
+	border-radius: 10px 10px 0 0;
+}
+
+.titulo{
+	display: flex;
+	font-size: 2em;
+	text-transform: uppercase;
+	color: white;
+	align-items: center;
+	margin: auto 1em;
+	padding: 1em;
+}
+
+.titulo > img{
+	margin-right: 1em;
+}
+
+.titulos > p{
+	color: #616a6b;
+	padding: 1em;
+	text-transform: uppercase;
+	background: white;
+}
+
+.seccion_palabras > img {
+    width: 15em;
+    height: 13em;
+}
+
+.seccion_palabras > span {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #616a6b;
+    margin: 0.5em;
+    font-weight: bold;
+}
+
+.seccion_palabras {
+    margin: 12px;
+    display: inline-grid;
+    padding: 1em;
+}
+
+.play, .pause{
+	background: none;
+	border: 1px solid #616A6B;
+	border-radius: 50%;
+	padding: 8px;
+	margin: 5px;
+	color: #616A6B;
+	transition: all;
+	transition-delay: .3s;
+	transition-duration: .3s;
+}
+
+.play:hover, .pause:hover{
+	cursor:pointer;
+}
+
+.empezar > a{
+	display: block;
+	padding: 1em;
+	width: 6em;
+	float: right;
+	margin-right: 4em;
+	margin-bottom: 2em;
+	border-radius: 20px;
+	color: white;
+	text-decoration: none;
+}

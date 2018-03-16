@@ -31,21 +31,18 @@ def  verificar_unidades(usuario):
 		else:
 			return
 
-#esta funcion no esta al 100% ojo hay que agregar p'rimero todas las lecciones a la base de datos y luego asi agregar a la base de datos todo
 def verificar_lecciones(usuario):
-	
-	x=0
-
 	if not DatosLeccionUsuario.objects.filter(usuario=usuario):
 		unidades = Unidad.objects.all()
-
-		x = x + 1
-		if x <= 3:
-			bloqueado = False
-		else:
-			bloqueado = True
+		x=0
 
 		for unidad in unidades:
+
+			x = x + 1
+			if x <= 3:
+				bloqueado = False
+			else:
+				bloqueado = True
 
 			for leccion in unidad.leccion_set.filter(unidad=unidad):
 				leccion_usuario = DatosLeccionUsuario(usuario=usuario, unidad=unidad, leccion=leccion, bloqueado=bloqueado)
@@ -53,21 +50,25 @@ def verificar_lecciones(usuario):
 	else:
 		return
 
-
-
 @login_required
 def inicio(request):
 	template = 'dashboard/dashboard.html'
 	
-	verificar_unidades(request.user)
-	verificar_lecciones(request.user)
+	if not request.user.cargar_datos:
+		verificar_unidades(request.user)
+		verificar_lecciones(request.user)
+		request.user.cargar_datos = True
+		request.user.save()
 
 	unidades = Unidad.objects.all()
 
-	context = {
-		'unidades':unidades,
-	}
+	unidad_usuario = DatosUnidadUsuario.objects.filter(usuario=request.user)
 
+	datos = zip(unidades,unidad_usuario)
+
+	context = {
+		'datos':datos,
+	}
 
 	return render(request,template,context)
 
@@ -88,8 +89,8 @@ def detalle_unidad(request, unidad):
 	return render(request, template, {'unidades':unidades, 'lecciones':lecciones, 'palabras':palabras})
 
 @login_required
-def practica(request, unidad, leccion):
-	template = 'dashboard/practica.html'
+def vista_previa(request, unidad, leccion):
+	template = 'dashboard/vista_previa.html'
 	get_object_or_404(Unidad, titulo=unidad)
 
 	unidades = Unidad.objects.get(titulo=unidad)
@@ -99,4 +100,4 @@ def practica(request, unidad, leccion):
 	palabras = lecciones.palabra_set.all()
 	
 
-	return render(request, template, {'lecciones':lecciones, 'unidades':unidades, 'palabras':palabras})
+	return render(request, template, {'unidad':unidades, 'palabras':palabras})

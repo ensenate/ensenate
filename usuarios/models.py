@@ -14,6 +14,8 @@ class User(AbstractUser):
 	fecha_inicio = models.DateField(default=timezone.now)
 	image = models.ImageField(upload_to='usuarios/perfiles/', default='usuarios/default/perfil.png')
 
+	cargar_datos = models.BooleanField(default=False)
+
 class DatosUnidadUsuario(models.Model):
 	usuario = models.ForeignKey(User, on_delete = models.CASCADE)
 	unidad = models.ForeignKey(Unidad, on_delete = models.CASCADE)

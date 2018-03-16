@@ -3,11 +3,14 @@
 @import url('base/footer.css');
 @import url(fontello.css);
 body{
-	background: #f8f9f9  ;
+	background: white;
 }
 
 .seccion{
 	margin: .5em auto;
+}
+.burbuja{
+	margin: 6em auto;
 }
 
 .seccion .banner{

@@ -15,8 +15,8 @@ urlpatterns = [
 	url(r'^unidad/(?P<unidad>[^/]+)$', dashboard.detalle_unidad,
                            name='lecciones'),
 	
-	url(r'^practica/(?P<unidad>[^/]+)/(?P<leccion>\d+)$', dashboard.practica,
-                           name='practica'),
+	url(r'^vista/(?P<unidad>[^/]+)/(?P<leccion>\d+)$', dashboard.vista_previa,
+                           name='vista_previa'),
 ]
 
 if settings.DEBUG:

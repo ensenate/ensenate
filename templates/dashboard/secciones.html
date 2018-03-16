@@ -1,7 +1,16 @@
+
 {% load staticfiles %}
+
 <div class="seccion-unidad">
-	<a  class="seccion-desbloqueado" href="{% url 'lecciones' unidades.titulo %}"> 
-		<img class="imagen-seccion  {{unidades.titulo}}" src="{% static unidades.image.url %}"/>
-		<span class="{{unidades.titulo}}">{{ unidades.titulo }}</span>
-	</a>
+	{% if not datos.bloqueado %}
+		<a  class="seccion-desbloqueado" href="{% url 'lecciones' unidades.titulo %}"> 
+			<img class="imagen-seccion  {{unidades.titulo}}" src="{% static unidades.image.url %}"/>
+			<span class="{{unidades.titulo}}">{{ unidades.titulo }}</span>
+		</a>
+	{% else %}
+		<span  class="seccion-bloqueado"> 
+			<img class="imagen-seccion  imagen-bloqueado" src="{% static 'img/bloqueado.png' %}"/>
+			<span class="bloqueado">bloqueado</span>
+		</span>
+	{% endif %}
 </div>

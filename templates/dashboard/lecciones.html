@@ -37,7 +37,7 @@
 								{% endfor %}
 							</p>
 							
-							<a href="{% url 'practica' unidad=unidades.titulo leccion=item.pk %} " class="{{unidades.titulo}}">Aprender</a>
+							<a href="{% url 'vista_previa' unidad=unidades.titulo leccion=item.pk %} " class="{{unidades.titulo}}">Aprender</a>
 						</div>
 					{% endfor %}
 				</div>

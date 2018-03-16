@@ -1,0 +1,48 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	enseñate / vista previa
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/dashboard/vista.css' %}">
+
+{% endblock %}
+
+{% block body %}
+
+	{% include 'bases/nav-user.html' %}
+	
+	<div class="contenedor">
+		<div class="burbuja">
+
+			<div class="titulos {{ unidad }}">
+				<span class="titulo" >
+					<img src="{{unidad.image.url}}" alt="">{{unidad}}</span>
+				<p> Memoriza las palabras de esta leccion antes de comenzar </p>
+			</div>
+
+			{%for palabras in palabras%}
+				<div class="seccion_palabras">
+					<span>{{palabras.titulo}}</span>
+					<img id="imagen" src="{{palabras.image2.url}}" alt="{{palabras.titulo}}">
+					
+					<div>
+						<button type="text" class="icon-play play"></button>
+						<button type="text" class="icon-pause pause"></button>
+					</div>
+				</div>
+			{%endfor%}
+			<div class="empezar">
+				<a class="{{unidad}}" href="">EMPEZAR</a>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'js/imagen.js'%}" ></script>
+{% endblock %}
