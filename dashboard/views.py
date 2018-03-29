@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 #decoradores
 from django.contrib.auth.decorators import login_required
@@ -12,6 +12,13 @@ from .models import Unidad, Leccion, Palabra#Category, Item#
 
 #prueba 2 
 from usuarios.models import DatosUnidadUsuario, DatosLeccionUsuario
+
+#ramdon
+from random import randint
+
+# json
+import json
+
 
 def  verificar_unidades(usuario):
 	if not DatosUnidadUsuario.objects.filter(usuario=usuario):
@@ -100,4 +107,50 @@ def vista_previa(request, unidad, leccion):
 	palabras = lecciones.palabra_set.all()
 	
 
-	return render(request, template, {'unidad':unidades, 'palabras':palabras})
+	return render(request, template, {'unidad':unidades, 'palabras':palabras, 'leccion':leccion})
+
+@login_required
+def aprender(request, unidad, leccion):
+	template = 'dashboard/aprender.html'
+
+	unidades = Unidad.objects.get(titulo=unidad)
+	lecciones = Leccion.objects.get(pk=leccion)
+	palabras = lecciones.palabra_set.all()
+
+	dic = {}
+	dic_p = {}
+	list_dic = []
+	cont = 0
+
+	for p in palabras:
+		cont += 1
+		dic_p["titulo"] = p.titulo
+		dic_p["image"] = p.image.url
+		dic_p["image2"] = p.image2.url
+		
+		list_dic.append(dic_p)
+
+
+		del dic_p
+
+		dic_p = {}
+
+	dic["imagenes"] = list_dic
+
+
+	data = json.dumps(dic)
+
+	print data
+
+	context = {
+		'datos':data,
+		'unidades':unidades,
+		'leccion':leccion,
+	}
+	
+	return render(request, template, context)
+
+
+@login_required
+def confirmar(request, unidad, leccion):
+	return redirect('../../perfil/');

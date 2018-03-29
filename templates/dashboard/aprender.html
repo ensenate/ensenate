@@ -1,0 +1,289 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}ensenate / aprender {% endblock %}
+
+{% block static %}
+		
+	<link rel="stylesheet" href="{% static 'css/dashboard/aprender.css' %}">
+
+{% endblock %}
+
+{% block body %}
+	<div id="contenedor" class="contenedor">
+		<div class="progreso">
+			<div class="barra {{unidades}}"></div>
+			<a class="regresar" href="{% url 'dashboard' %}">X</a>
+		</div>
+		<div id="titulo" class="titulo_vida">
+			<h2>Recuerdas esta palabra</h2>
+		</div>
+
+		<div id="palabras" class="contenedor_palabra">
+			<span></span>
+
+
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+	<script>
+		var datos = '{{datos|safe}}';
+		var d = JSON.parse(datos);
+		var lista = [];
+		var numero;
+		var vidas = 3;
+		var url_perdedor = "{% url 'dashboard' %}";
+		var url_ganador = "{% url 'confirmar' unidad=unidades leccion=leccion %}";
+
+		console.log(d);	
+
+		function cargar_objetos(){
+
+
+			var div_contenedor = document.getElementById("contenedor");
+			var div_contenedor_perdedor = document.createElement("div");
+
+			div_contenedor_perdedor.className = "contenedor_perdedor";
+			div_contenedor_perdedor.setAttribute('id', 'contenedor_perdedor');
+
+			div_contenedor.appendChild(div_contenedor_perdedor);
+
+			var d = document.getElementById("palabras");
+			var contenedor_titulo = document.getElementById("titulo");
+			var d_vidas = document.createElement("div");
+			var img = document.createElement("img");
+			var input = document.createElement("input");
+			var b = document.createElement("button");
+			var texto = document.createTextNode("CALIFICAR");
+	        var vidas = [this.vidas];
+
+	        var contenedor_boton = document.createElement("div");
+	        var contenedor_play = document.createElement("div");
+
+	        var div_semantica = document.createElement("div");
+	        var span_semantica = document.createElement("span");
+
+	        var boton_play = [2];
+
+
+	        d_vidas.setAttribute('id', 'div_vidas');
+	        img.setAttribute('id', 'imagen_actual');
+	        b.setAttribute('id', 'btn_evaluar');
+	        input.setAttribute('id', 'input_texto');
+
+	        d_vidas.className = "contenedor_vidas";
+	        contenedor_boton.className = "contenedor_evaluar";
+
+	        for (var x = 0; x < 2; x++) {
+	        	boton_play[x] = document.createElement("button");
+	        	boton_play.type = "text";
+	        	if (x == 0){
+	        		boton_play[x].className = "icon-play play";
+	        	}
+	        	else{
+	        		boton_play[x].className = "icon-pause pause";	
+	        	}
+	        	contenedor_play.appendChild(boton_play[x]);
+	        }
+
+	        for(var x = 0; x < this.vidas; x++){
+				
+				vidas[x] = document.createElement("div");
+				vidas[x].className = "vida";
+				d_vidas.appendChild(vidas[x]);
+			}
+
+			b.className = "btn_evaluar";
+			b.className += " {{unidades}}";
+
+			input.type = "text";
+
+			
+			b.appendChild(texto);
+			
+			contenedor_titulo.appendChild(d_vidas);
+			contenedor_boton.appendChild(input);
+			contenedor_boton.appendChild(b);
+
+			div_semantica.appendChild(span_semantica);
+			div_semantica.appendChild(img);
+			div_semantica.appendChild(contenedor_play);
+			div_semantica.appendChild(contenedor_boton);
+
+			d.appendChild(div_semantica);
+			
+
+			img.src = generar_imagen();
+			img.alt = this.d.imagenes[this.numero].titulo;
+		}
+
+		function generar_imagen(){
+			var i = document.getElementById("imagen_actual");
+			var ruta = '';
+			if(this.lista.length < this.d.imagenes.length){
+				this.numero = generar_numero();
+				ruta = this.d.imagenes[this.numero].image2;
+			}
+
+			i.src = ruta;
+			i.alt = this.d.imagenes[this.numero].titulo;
+
+			return ruta;
+
+		}
+
+		function generar_numero(){
+			var numero;
+			if( this.lista.length == 0 ){
+				numero = Math.floor((Math.random() * this.d.imagenes.length));
+				this.lista.push(numero);
+			}
+			else if (this.lista.length <= this.d.imagenes.length){
+				var activar = true;
+				do{
+					numero = Math.floor((Math.random() * this.d.imagenes.length));
+					activar = false;
+					for (var i = 0; i < this.lista.length; i++) {
+						if(numero == this.lista[i]){
+							activar = true;
+						}
+					}
+				}while(activar);
+
+				this.lista.push(numero);
+			}
+			return numero;
+		}
+		
+		function validar(){
+			var texto = document.getElementById("input_texto");
+			var titulo = this.d.imagenes[this.numero].titulo;
+			var contenedor_perdedor = document.getElementById("contenedor_perdedor");
+			
+			if(texto.value == titulo){
+				texto.value = "";
+				bien();
+				contenedor_perdedor.className += " movimiento bien";	
+			}
+			else{
+				if(this.vidas > 0){
+					var vida = document.getElementsByClassName("vida");
+					texto.value = "";
+					contenedor_perdedor.className += " movimiento";
+					vida[this.vidas - 1].className += " dead";
+					this.vidas--;
+					dead();
+				}
+			}
+		}
+
+		cargar_objetos();
+		
+		var button = document.getElementById("btn_evaluar").addEventListener("click",function(){
+			eval();
+		});
+
+
+		function eval(){
+			var button = document.getElementById("btn_evaluar");
+
+			if(button.textContent == "CALIFICAR"){
+				validar();
+			}
+			else{
+				if(this.vidas > 0){
+					if(this.lista.length < this.d.imagenes.length){
+						button.textContent = "CALIFICAR";
+						limpiar();
+						generar_imagen();
+					}
+				}
+			}
+		}
+
+		function ganador(){
+			if(this.lista.length < this.d.imagenes.length){
+				return false;
+			}
+			return true;
+		}
+
+		function limpiar(){
+			var div_contenedor_perdedor = document.getElementById("contenedor_perdedor");
+			div_contenedor_perdedor.className = "contenedor_perdedor";
+			div_contenedor_perdedor.textContent = "";
+		}
+
+		function dead(){
+			var div_contenedor_perdedor = document.getElementById("contenedor_perdedor");
+			var button = document.getElementById("btn_evaluar");
+			var texto = document.createTextNode("");
+			var a;
+
+			if (this.vidas > 0){
+				if (ganador()){
+					var texto = document.createTextNode("¡GANASTE!");
+					div_contenedor_perdedor.appendChild(texto);
+
+					div_contenedor_perdedor.className = "contenedor_perdedor movimiento bien";
+					div_contenedor_perdedor.appendChild(link(a, "CONTINUAR", "ganador", this.url_ganador));
+
+					eliminar_boton();
+
+
+
+				}
+				else{
+					var texto = document.createTextNode("te equivocaste, la palabra correcta es: " + this.d.imagenes[this.numero].titulo);	
+					div_contenedor_perdedor.appendChild(texto);
+
+					button.textContent = "CONTINUAR";
+				}
+			}
+			else{
+				var texto = document.createTextNode("PERDISTE SE ACABARON LAS VIDAS");
+				div_contenedor_perdedor.appendChild(texto);
+				div_contenedor_perdedor.appendChild(link(a, "SALIR", "perdedor", this.url_perdedor));
+			}
+		}
+
+		function link(a, texto, clase, url){
+			a = document.createElement("a");
+			a.textContent = texto;
+			a.className = clase;
+			a.href = url;
+			return a;
+		}
+
+		function bien(){
+			var div_contenedor_perdedor = document.getElementById("contenedor_perdedor");
+			var button = document.getElementById("btn_evaluar");
+			var a;
+
+			if(this.lista.length < this.d.imagenes.length){
+				var texto = document.createTextNode("CORRECTO");
+				div_contenedor_perdedor.appendChild(texto);
+				button.textContent = "CONTINUAR";
+			}
+			else{
+				var texto = document.createTextNode("¡GANASTE! CONTESTASTE TODO CORRECTAMENTE");
+				div_contenedor_perdedor.appendChild(texto);
+				div_contenedor_perdedor.appendChild(link(a, "CONTINUAR", "ganador", this.url_ganador));
+				eliminar_boton();
+			}
+		}
+
+		function eliminar_boton(){
+			this.vidas = 0;
+		}
+
+
+
+	</script>
+	<script src="{% static 'js/imagen.js'%}" ></script>
+
+{% endblock %}

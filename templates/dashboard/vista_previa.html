@@ -35,7 +35,7 @@
 				</div>
 			{%endfor%}
 			<div class="empezar">
-				<a class="{{unidad}}" href="">EMPEZAR</a>
+				<a class="{{unidad}}" href="{% url 'aprender' unidad=unidad leccion=leccion %}">COMENZAR</a>
 			</div>
 		</div>
 	</div>
