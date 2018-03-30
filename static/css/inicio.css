@@ -33,19 +33,21 @@ body{
 }
 
 .texto-banner > h2{
-	font-size: 1.2em;
+	font-size: 1.1rem;
 	color: #333;
+	text-transform: uppercase;
 }
 
 .texto-banner > a {
 	display: inline-block;
-	font-size: 1.5em;
+	font-size: 1.4rem;
 	margin-top: 0.5em;
 	padding: 0.5em;
 	text-decoration: none;
 	color: #333;
 	border: .02em solid #333;
 	border-radius: .7em ;
+	text-transform: uppercase;
 }
 
 .texto-banner > a:hover {
@@ -71,6 +73,6 @@ body{
 	max-width: 21em;
 	align-items: center;
 	font-size: 1em;
-	text-transform: lowercase;
+	text-transform: uppercase;
 	color: #333;
 }

@@ -52,7 +52,7 @@ body{
 	padding: 0.1em;
 }
 
-.datos-usuario > span > img{
+.datos-usuario > span > .pic_perfil{
 	width: 2em;
 	height: 2em;
 }
@@ -101,10 +101,11 @@ body{
 	display: block;
 	padding: 0.5em;
 	color: #0088CC;
-	font-size: 1em;
+	font-size: .9rem;
 	text-decoration: none;
 	transition: all;
 	transition-duration: 0.1s;
+	text-transform: uppercase;
 }
 
 .navegacion .enlaces-derecha .menu_inicio{
@@ -146,12 +147,6 @@ body{
 	color: #333;
 	text-transform: uppercase;
 }
-.nivel{
-	font-size: 0.6em;
-	color: #d0d3d4;
-	text-transform: uppercase;
-}
-
 .seccion-unidad{
 	margin: 1.5em;
 	display: inline-block;
@@ -278,4 +273,15 @@ hr{
 .imagen-bloqueado{
 	border-radius: 50%;
 	background: #6e6e6e;
+}
+
+.gem {
+    display: flex;
+    align-items: center;
+}
+
+.gem >  img{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: auto 0.2rem;
 }

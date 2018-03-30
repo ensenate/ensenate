@@ -22,7 +22,7 @@
 			<div class="user-image">
 				<img src="{{ request.user.image.url}}" alt="imagen de perfil">
 			</div>
-			<div class="user-nivel">nivel: {{ request.user.nivel}} </div>
+			<div class="user-gem"><img src="{% static 'img/gem.png' %}" alt="gemas">: {{ request.user.gemas}}  </div>
 			<div class="user-nombres">{{ request.user.first_name }} {{ request.user.last_name }}</div>
 			<div class="user-nombres">{{ request.user.email }}</div>
 			<div class="biografia" >{{ request.user.biografia }}</div>

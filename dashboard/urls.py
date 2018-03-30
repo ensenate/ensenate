@@ -19,7 +19,7 @@ urlpatterns = [
                            name='vista_previa'),	
 	url(r'^aprender/(?P<unidad>[^/]+)/(?P<leccion>\d+)$', dashboard.aprender,
                            name='aprender'),
-	url(r'^confirmar/(?P<unidad>[^/]+)/(?P<leccion>\d+)$', dashboard.confirmar,
+	url(r'^confirmar/(?P<unidad>[^/]+)/$', dashboard.confirmar,
                            name='confirmar'),
 ]
 

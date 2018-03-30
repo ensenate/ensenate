@@ -1,6 +1,3 @@
-@import url('fontello.css');
-@import url(fontello.css);
-
 header{
 	width: 100%;
 	background: #FFF;
@@ -29,8 +26,8 @@ header{
 	background:  none;
 	
 	text-align: center;
-	text-transform: lowercase;
-	font-size: 1em;
+	text-transform: uppercase;
+	font-size: .9rem;
 	
 	text-decoration: none;
 	

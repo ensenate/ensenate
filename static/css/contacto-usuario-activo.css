@@ -1,5 +1,17 @@
 @import url('fontello.css');
 
+
+.gem {
+    display: flex;
+    align-items: center;
+}
+
+.gem >  img{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: auto 0.2rem;
+}
+
 header{
 	background:  #3498db;
 	box-shadow: none;

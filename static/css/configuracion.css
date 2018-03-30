@@ -24,18 +24,20 @@
 }
 
 .titulo-boton > span{
-	font-size: 1.5em;
+	font-size: 1.3rem;
 	color: #333;
+	text-transform: uppercase;
 }
 
 .titulo-boton > input{
 	border: none;
-	padding: 1em 1.5em;
-	border-radius: 20px;
+	padding: .8rem 1.5rem;
+	border-radius: 2rem;
 	background: #3498db;
 	color: white;
-	font-size: 0.7em;
+	font-size: 0.7rem;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .titulo-boton > input:hover{
@@ -61,7 +63,10 @@
 	width: 10em;
 	color: #333;
 	display: block;
-	font-size: 1em;
+	font-size: .8rem;
+	text-transform: uppercase;
+	white-space: nowrap;
+	margin: auto 1.5rem;
 }
 
 .campo-inputs > input[type="text"], .campo-inputs > input[type="email"], .campo-inputs > input[type="password"]{
@@ -106,9 +111,10 @@
 
 
 .usuario-list > a{
-	font-size: .8em;
+	font-size: .8rem;
 	color: #3498db;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .list-init > li{
@@ -120,12 +126,14 @@
 }
 .opcion-list > a{
 	display: block;
-	padding: 0.6em 0.7em;
-	border-radius: 20px;
+	padding: 0.6rem 0.7rem;
+	border-radius: 2rem;
 	text-decoration: none;
 	color: #333;
-	transform: all;
+	transition: all;
 	transition-duration: .2s;
+	text-transform: uppercase;
+	font-size: 0.9rem;
 }
 
 .opcion-list > a:hover{
@@ -137,15 +145,17 @@
 }
 
 .campo-inputs > textarea{
-	padding: .6em;
+	padding: .6rem;
 	color: #333;	
-	font-size: .8em;
+	font-size: .8rem;
 	resize: none;
 	border: 2px solid #d8d8d8;
 	border-radius: 10px;
+	width: 15.5rem;
 }
 
 .campo-inputs > .fecha{
 	color: #333;
-	font-size: .8em;
+	font-size: .8rem;
+	text-transform: uppercase;
 }

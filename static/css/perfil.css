@@ -2,9 +2,9 @@
 @import url('base/nav.css');
 @import url('dashboard.css');
 
-.username, .user-nivel,.user-image, .user-nombres, .aprendiendo, .biografia{
+.username, .user-gem,.user-image, .user-nombres, .aprendiendo, .biografia{
 	text-align: center;
-	text-transform: lowercase;
+	text-transform: uppercase;
 	font-weight: bold;
 	
 	padding: .2em;
@@ -21,11 +21,16 @@
 	max-width: 10em;
 	max-height: 10em;
 }
-.user-nivel{	
-	font-size: 1.2em;
+.user-gem{	
+	font-size: 1.2rem;
 	font-weight: normal;
+	display: flex;
+	justify-content: center;
+	height: 1.5rem;
 }
-
 .aprendiendo{
 	text-align: left;
+}
+.username{
+	text-transform: lowercase;
 }

@@ -11,9 +11,9 @@
 					<ul class="navegacion_perfil">
 						<li class="li-principal">
 						<div class="datos-usuario">
-							<span><img src="{{user.image.url}}" alt="" width="48px" height="48px"></span>
+							<span><img class="pic_perfil" src="{{user.image.url}}" alt="" width="48px" height="48px"></span>
 							<span class="usuario" >{{user.username}}</span>
-							<span class="icon-diamond"> {{user.gemas}}</span>
+							<span class="gem"> <img src="{% static 'img/gem.png' %}" alt=""> {{ user.gemas }}</span>
 						</div>
 							<ul>
 								<li><a href="{% url 'perfil' %}">perfil</a></li>

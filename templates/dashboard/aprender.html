@@ -13,7 +13,7 @@
 	<div id="contenedor" class="contenedor">
 		<div class="progreso">
 			<div class="barra {{unidades}}"></div>
-			<a class="regresar" href="{% url 'dashboard' %}">X</a>
+			<a class="regresar icon-cancel" href="{% url 'dashboard' %}"></a>
 		</div>
 		<div id="titulo" class="titulo_vida">
 			<h2>Recuerdas esta palabra</h2>
@@ -37,7 +37,7 @@
 		var numero;
 		var vidas = 3;
 		var url_perdedor = "{% url 'dashboard' %}";
-		var url_ganador = "{% url 'confirmar' unidad=unidades leccion=leccion %}";
+		var url_ganador = "{% url 'confirmar' unidad=unidades %}";
 
 		console.log(d);	
 
@@ -230,7 +230,7 @@
 					div_contenedor_perdedor.appendChild(texto);
 
 					div_contenedor_perdedor.className = "contenedor_perdedor movimiento bien";
-					div_contenedor_perdedor.appendChild(link(a, "CONTINUAR", "ganador", this.url_ganador));
+					div_contenedor_perdedor.appendChild(link(a, "   CONTINUAR", "ganador icon-good", this.url_ganador));
 
 					eliminar_boton();
 
@@ -247,7 +247,7 @@
 			else{
 				var texto = document.createTextNode("PERDISTE SE ACABARON LAS VIDAS");
 				div_contenedor_perdedor.appendChild(texto);
-				div_contenedor_perdedor.appendChild(link(a, "SALIR", "perdedor", this.url_perdedor));
+				div_contenedor_perdedor.appendChild(link(a, "   SALIR", "perdedor icon-sad", this.url_perdedor));
 			}
 		}
 
@@ -272,7 +272,7 @@
 			else{
 				var texto = document.createTextNode("¡GANASTE! CONTESTASTE TODO CORRECTAMENTE");
 				div_contenedor_perdedor.appendChild(texto);
-				div_contenedor_perdedor.appendChild(link(a, "CONTINUAR", "ganador", this.url_ganador));
+				div_contenedor_perdedor.appendChild(link(a, "   CONTINUAR", "ganador icon-perfect", this.url_ganador));
 				eliminar_boton();
 			}
 		}

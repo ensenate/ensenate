@@ -55,11 +55,12 @@
 	margin: 0.2em;
 	padding: 0.2em;
 	color: #a4a4a4;
+	text-transform: uppercase;
 }
 
 .secciones > a{
 	display: inline-block;
-	border-radius: 1.5em;
+	border-radius: 1em;
 	margin: 1em;
 	padding: 0.8em;
 	text-transform: lowercase;
@@ -68,6 +69,7 @@
 	transition: all;
 	transition-delay: .3s;
 	transition-duration: .3s;
+	text-transform: uppercase;
 }
 
 .secciones > a:hover{

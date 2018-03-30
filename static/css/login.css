@@ -8,13 +8,14 @@
 	margin: 1em auto;
 	max-width: 70%;
 	padding: 1em;
+	margin-top: 6em;
 }
 
 .contenedor-central h2{
-	padding: 0.3em;
-	margin: .4em;
-	font-size: 1.5em;
-	text-transform: lowercase;
+	padding: 0.3rem;
+	margin: .4rem;
+	font-size: 1.3rem;
+	text-transform: uppercase;
 	color: #333;
 }
 .contenedor-form{
@@ -47,6 +48,7 @@
 	text-decoration: none;
 	color: white;
 	font-size: 0.9em;
+	text-transform: uppercase;
 }
 
 .contenedor-boton > a > span{
@@ -69,7 +71,7 @@
 .formulario > p > label{
 	margin: 0.2em; 
 	float: left;
-	text-transform:  lowercase;
+	text-transform: uppercase;
 	font-size: 0.7em;
 	font-weight: bold;
 	color: #333;
@@ -90,8 +92,8 @@ textarea, .formulario input[type="text"], .formulario input[type="password"], .f
 }
 
 .contenedor-boton-sesion > a, .no-cuenta, .descripcion-no-cuenta, .error-formulario {
-	text-transform: lowercase;
-	font-size: 0.8em;
+	text-transform: uppercase;
+	font-size: 0.6rem;
 	margin: 0.5em;
 	text-decoration: none;
 	color: #277BD7;
@@ -105,6 +107,8 @@ input[type="submit"] {
 	color: white;
 	background: #0077CC;
 	cursor: pointer;
+	text-transform: uppercase;
+	
 }
 
 .descripcion-no-cuenta{

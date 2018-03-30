@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
-from dashboard.models import Unidad, Leccion
+from dashboard.models import Unidad
 
 
 # Create your models here.
@@ -20,23 +20,10 @@ class DatosUnidadUsuario(models.Model):
 	usuario = models.ForeignKey(User, on_delete = models.CASCADE)
 	unidad = models.ForeignKey(Unidad, on_delete = models.CASCADE)
 
-	ultima_vez = models.DateField(default=timezone.now)
+	ultima_vez = models.DateField(null=True)
 	fuerza = models.PositiveSmallIntegerField(default=0)
 	bloqueado = models.BooleanField(default=True)
 	completo = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.usuario.first_name + " - " + self.unidad.titulo
-
-class DatosLeccionUsuario(models.Model):
-	usuario = models.ForeignKey(User, on_delete = models.CASCADE)
-	unidad = models.ForeignKey(Unidad, on_delete = models.CASCADE)
-	leccion = models.ForeignKey(Leccion, on_delete = models.CASCADE)
-
-	ultima_vez = models.DateField(default=timezone.now)
-	bloqueado = models.BooleanField(default=True)
-	completo = models.BooleanField(default=False)
-
-	def __str__(self):
-		return self.usuario.first_name + " - " + self.unidad.titulo + " - " + self.leccion.titulo
-

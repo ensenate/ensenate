@@ -11,13 +11,17 @@ from django.views.generic import TemplateView
 from .models import Unidad, Leccion, Palabra#Category, Item#
 
 #prueba 2 
-from usuarios.models import DatosUnidadUsuario, DatosLeccionUsuario
+from usuarios.models import DatosUnidadUsuario
 
 #ramdon
 from random import randint
 
 # json
 import json
+
+#timezone
+from django.utils import timezone
+
 
 
 def  verificar_unidades(usuario):
@@ -38,32 +42,12 @@ def  verificar_unidades(usuario):
 		else:
 			return
 
-def verificar_lecciones(usuario):
-	if not DatosLeccionUsuario.objects.filter(usuario=usuario):
-		unidades = Unidad.objects.all()
-		x=0
-
-		for unidad in unidades:
-
-			x = x + 1
-			if x <= 3:
-				bloqueado = False
-			else:
-				bloqueado = True
-
-			for leccion in unidad.leccion_set.filter(unidad=unidad):
-				leccion_usuario = DatosLeccionUsuario(usuario=usuario, unidad=unidad, leccion=leccion, bloqueado=bloqueado)
-				leccion_usuario.save()
-	else:
-		return
-
 @login_required
 def inicio(request):
 	template = 'dashboard/dashboard.html'
 	
 	if not request.user.cargar_datos:
 		verificar_unidades(request.user)
-		verificar_lecciones(request.user)
 		request.user.cargar_datos = True
 		request.user.save()
 
@@ -89,11 +73,17 @@ def detalle_unidad(request, unidad):
 	template = 'dashboard/lecciones.html'
 	get_object_or_404(Unidad, titulo=unidad)
 
+
 	unidades = Unidad.objects.get(titulo=unidad)
 	lecciones = unidades.leccion_set.filter(unidad=unidades)
 	palabras = Palabra.objects.filter(leccion=lecciones[0])
-	
-	return render(request, template, {'unidades':unidades, 'lecciones':lecciones, 'palabras':palabras})
+
+	fecha = DatosUnidadUsuario.objects.filter(usuario=request.user, unidad=unidades)
+	fecha = fecha[0].ultima_vez
+
+	cadena = fecha.strftime("%d-%m-%y")
+
+	return render(request, template, {'unidades':unidades, 'lecciones':lecciones, 'palabras':palabras, 'fecha':cadena,})
 
 @login_required
 def vista_previa(request, unidad, leccion):
@@ -140,8 +130,6 @@ def aprender(request, unidad, leccion):
 
 	data = json.dumps(dic)
 
-	print data
-
 	context = {
 		'datos':data,
 		'unidades':unidades,
@@ -152,5 +140,28 @@ def aprender(request, unidad, leccion):
 
 
 @login_required
-def confirmar(request, unidad, leccion):
-	return redirect('../../perfil/');
+def confirmar(request, unidad):
+
+	unidad = get_object_or_404(Unidad, titulo=unidad)
+
+	datos = DatosUnidadUsuario.objects.filter(usuario=request.user)
+
+	print datos
+
+	for i in xrange(0, len(datos)):
+		
+ 		if datos[i].unidad == unidad:
+ 			datos[i].completo = True
+ 			datos[i].ultima_vez = timezone.now()
+			datos[i].save()
+
+			user = request.user
+			user.gemas += 1
+			user.save()
+
+			siguiente = i + 1
+			if siguiente <= len(datos) - 2:
+				datos[siguiente].bloqueado = False
+				datos[siguiente].save()
+		
+	return redirect('../../dashboard/')
