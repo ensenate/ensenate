@@ -2,6 +2,14 @@
 @import url('base/nav.css');
 @import url('dashboard.css');
 
+.burbuja-invisible{
+    width: 70%;
+	margin: 6em auto 0em;
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 .username, .user-gem,.user-image, .user-nombres, .aprendiendo, .biografia{
 	text-align: center;
 	text-transform: uppercase;
@@ -9,7 +17,7 @@
 	
 	padding: .2em;
 	margin:0.2em;
-	color: #333
+	color: #333;
 }
 
 .username{
@@ -28,9 +36,53 @@
 	justify-content: center;
 	height: 1.5rem;
 }
-.aprendiendo{
-	text-align: left;
-}
+
 .username{
 	text-transform: lowercase;
+}
+
+.burbuja-visible {
+    background: white;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+	box-shadow: 0 0 2px #d0d3d4;
+	margin: 0.5rem;
+}
+
+.burbuja-juegos{
+	text-align: center;
+	margin-bottom: 4em;
+	padding: 2rem;
+}
+.juegos> h3{
+	font-size: 1.5rem;
+	color: #333;
+	text-transform: uppercase;
+	padding: 1rem;
+}
+.burbuja-juego{
+	padding: 1rem 2rem;
+	margin: 1rem;
+	display: inline-block;
+	border-radius: 1rem;
+	box-shadow: 0 0 2px #d0d3d4;
+}
+
+h4 {
+    text-transform: uppercase;
+    padding: 0.2rem;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0.2rem;
+}
+
+.cover{
+	width: 12rem;
+	height: 12rem;
+}
+
+.costo-gema{
+	color: #333;
 }

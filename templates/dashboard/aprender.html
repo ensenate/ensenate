@@ -12,7 +12,11 @@
 {% block body %}
 	<div id="contenedor" class="contenedor">
 		<div class="progreso">
-			<div class="barra {{unidades}}"></div>
+			
+			<div class="barra_progreso">
+				<div id="barra" class="barra {{unidades}}"></div>
+			</div>
+
 			<a class="regresar icon-cancel" href="{% url 'dashboard' %}"></a>
 		</div>
 		<div id="titulo" class="titulo_vida">
@@ -20,7 +24,6 @@
 		</div>
 
 		<div id="palabras" class="contenedor_palabra">
-			<span></span>
 
 
 		</div>
@@ -38,6 +41,18 @@
 		var vidas = 3;
 		var url_perdedor = "{% url 'dashboard' %}";
 		var url_ganador = "{% url 'confirmar' unidad=unidades %}";
+
+		//codigo para la barra de progreso
+		var progreso_final = d.imagenes.length;
+		var elemento_barra_progreso = document.getElementById("barra");
+
+		elemento_barra_progreso.style.width = progreso_bar(progreso_final)+"%";
+
+		console.log(barra);
+
+		function progreso_bar(total){
+			return (100 * (this.lista.length)) / total;
+		}
 
 		console.log(d);	
 
@@ -65,6 +80,7 @@
 	        var contenedor_play = document.createElement("div");
 
 	        var div_semantica = document.createElement("div");
+	        div_semantica.setAttribute("id", "contenedor_div_imagen");
 	        var span_semantica = document.createElement("span");
 
 	        var boton_play = [2];
@@ -104,6 +120,8 @@
 
 			
 			b.appendChild(texto);
+
+			contenedor_play.className = "contenedor_botones";
 			
 			contenedor_titulo.appendChild(d_vidas);
 			contenedor_boton.appendChild(input);
@@ -167,7 +185,9 @@
 			if(texto.value == titulo){
 				texto.value = "";
 				bien();
-				contenedor_perdedor.className += " movimiento bien";	
+				contenedor_perdedor.className += " movimiento bien";
+				this.elemento_barra_progreso.style.width = progreso_bar(progreso_final)+"%";
+	
 			}
 			else{
 				if(this.vidas > 0){
@@ -177,6 +197,8 @@
 					vida[this.vidas - 1].className += " dead";
 					this.vidas--;
 					dead();
+					this.elemento_barra_progreso.style.width = progreso_bar(progreso_final)+"%";
+
 				}
 			}
 		}

@@ -16,19 +16,76 @@
 	
 
 	<div class="contenedor">
-		<div class="burbuja">
-		
-			<div class="username">{{request.user.username}}</div>
-			<div class="user-image">
-				<img src="{{ request.user.image.url}}" alt="imagen de perfil">
+		<div class="burbuja-invisible">
+			<div class="burbuja-visible">
+				<div class="username">{{request.user.username}}</div>
+				<div class="user-image">
+					<img src="{{ request.user.image.url}}" alt="imagen de perfil">
+				</div>
+				<div class="user-gem"><img src="{% static 'img/gem.png' %}" alt="gemas">: {{ request.user.gemas}}  </div>
 			</div>
-			<div class="user-gem"><img src="{% static 'img/gem.png' %}" alt="gemas">: {{ request.user.gemas}}  </div>
-			<div class="user-nombres">{{ request.user.first_name }} {{ request.user.last_name }}</div>
-			<div class="user-nombres">{{ request.user.email }}</div>
-			<div class="biografia" >{{ request.user.biografia }}</div>
-			<div class="aprendiendo" >Aprendiendo desde: {{ request.user.fecha_inicio}}</div>
-		
+			
+			<div class="burbuja-visible">
+				<div class="user-nombres">{{ request.user.first_name }} {{ request.user.last_name }}</div>
+				<div class="user-nombres">{{ request.user.email }}</div>
+				<div class="biografia" >{{ request.user.biografia }}</div>
+				<div class="aprendiendo" >Aprendiendo desde: {{ request.user.fecha_inicio}}</div>
+			</div>
+
 		</div>
+
+	
+		<div class="burbuja-visible burbuja-juegos">
+			<div class="juegos">
+				<h3>mini-juegos</h3>
+				
+				<div class="burbuja-juego">
+					<h4>Flappybird</h4>
+					
+					{% if not bloqueado %}
+						<a href="{% url 'juego' nombre_juego='flappybird' %}">
+					{% else %}
+						<span>
+					{% endif %}
+						<img class ="cover" src="{% static 'img/juegos/flappy/cover.png' %}" alt="flappybird">
+					{% if not bloqueado %}
+						</a>
+					{% else %}
+						</span>
+					{% endif %}
+
+					{% if not bloqueado %}
+						<div class="user-gem costo-gema"><img src="{% static 'img/gem.png' %}" alt="gemas">: 1  </div>
+					{% else %}
+						<h4>BLOQUEADO</h4>
+					{% endif %}
+					
+				</div>
+				
+				<div class="burbuja-juego">
+					<h4>Super Snake</h4>
+					{% if not bloqueado %}
+						<a href="{% url 'juego' nombre_juego='snake' %}">
+					{% else %}
+						<span>
+					{% endif %}
+						<img class="cover" src="{% static 'img/juegos/snake/cover.png' %}" alt="supersnake">
+					{% if not bloqueado %}
+						</a>
+					{% else %}
+						</span>
+					{% endif %}
+					
+					{% if not bloqueado %}
+						<div class="user-gem costo-gema"><img src="{% static 'img/gem.png' %}" alt="gemas">: 1  </div>
+					{% else %}
+						<h4>BLOQUEADO</h4>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+		
 		
 		</div>	
 	</div>

@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'principal',
     'dashboard',
     'usuarios',
+    'juego',
 
     #social-auth
     'social_django',  # <--

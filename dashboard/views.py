@@ -66,7 +66,12 @@ def inicio(request):
 @login_required
 def perfil(request):
 	template = 'dashboard/perfil.html'
-	return render(request, template, {})
+	bloqueado = True
+
+	if request.user.gemas > 0:
+		bloqueado = False
+
+	return render(request, template, {'bloqueado':bloqueado,})
 
 @login_required
 def detalle_unidad(request, unidad):
@@ -81,7 +86,10 @@ def detalle_unidad(request, unidad):
 	fecha = DatosUnidadUsuario.objects.filter(usuario=request.user, unidad=unidades)
 	fecha = fecha[0].ultima_vez
 
-	cadena = fecha.strftime("%d-%m-%y")
+	if fecha:
+		cadena = fecha.strftime("%d-%m-%y")
+	else:
+		cadena = None
 
 	return render(request, template, {'unidades':unidades, 'lecciones':lecciones, 'palabras':palabras, 'fecha':cadena,})
 

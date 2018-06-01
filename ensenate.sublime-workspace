@@ -4,16 +4,144 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"imag",
+				"imagen"
+			],
+			[
+				"form",
+				"form_imagen"
+			],
+			[
+				"Dat",
+				"DatosLeccionUsuario"
+			],
+			[
+				"unida",
+				"unidades"
+			],
+			[
+				"unidad",
+				"unidad"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"cret",
+				"createElement"
+			],
+			[
+				"contene",
+				"contenedor_boton"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"btn",
+				"btn_evaluar"
+			],
+			[
+				"url",
+				"url_perdedor"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"div",
+				"div_contenedor_perdedor"
+			],
+			[
+				"text-ali",
+				"text-align"
+			],
+			[
+				"di",
+				"div_contenedor_perdedor"
+			],
+			[
+				"cre",
+				"createTextNode"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"div_contene",
+				"div_contenedor_perdedor"
+			],
+			[
+				"transition",
+				"transition"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"span",
+				"span_semantica"
+			],
+			[
+				"generar",
+				"generar_imagen"
+			],
+			[
+				"conte",
+				"contenedor_play"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"contenedo",
+				"contenedor_boton"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"ling",
+				"align-items"
+			],
+			[
+				"contenedor",
+				"contenedor_titulo"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"d",
+				"d_vidas"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
 				"image",
 				"imagenes"
 			],
 			[
 				"b",
 				"b"
-			],
-			[
-				"get",
-				"getElementById"
 			],
 			[
 				"list",
@@ -40,10 +168,6 @@
 				"margin"
 			],
 			[
-				"text",
-				"text-decoration"
-			],
-			[
 				"mar",
 				"margin-right"
 			],
@@ -68,14 +192,6 @@
 				"boton_play"
 			],
 			[
-				"unidad",
-				"unidad_usuario"
-			],
-			[
-				"inline",
-				"inline-flex"
-			],
-			[
 				"verificar",
 				"verificar_lecciones"
 			],
@@ -90,10 +206,6 @@
 			[
 				"User",
 				"User_Unidad"
-			],
-			[
-				"transition",
-				"transition-duration"
 			],
 			[
 				"tras",
@@ -152,29 +264,40 @@
 	"buffers":
 	[
 		{
-			"file": "templates/dashboard/aprender.html",
+			"contents": "var elementos = document.getElementsByClassName('form-control');\nvar imagen = form_imagen();\n\nfunction form_imagen(){\n\ttry {\n  \t\tvar image = document.getElementById('id_image');\n  \t\talert(image);\n  \t\tthis.elementos.push(image);\n  \t\tconsole.log(this.elementos);\n\t}\n\tcatch (error) {\n  \t}\n\n  \treturn image;\n}\n\n\nfor (var i = 0; i < Things.length; i++) {\n\tThings[i]\n}\n\n\n\nalert(elementos.length);\n\nconsole.log(imagen);\n",
+			"file": "static/js/form.js",
+			"file_size": 354,
+			"file_write_time": 131712284813258328,
 			"settings":
 			{
-				"buffer_size": 1388,
+				"buffer_size": 413,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "static/js/aprender.js",
+			"file": "templates/dashboard/conf_cuenta.html",
 			"settings":
 			{
-				"buffer_size": 35,
+				"buffer_size": 1537,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dashboard/views.py",
+			"file": "usuarios/forms.py",
 			"settings":
 			{
-				"buffer_size": 3228,
+				"buffer_size": 2413,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "usuarios/views.py",
+			"settings":
+			{
+				"buffer_size": 2265,
 				"line_ending": "Unix"
 			}
 		}
@@ -218,67 +341,72 @@
 	"expanded_folders":
 	[
 		"/home/said/ProyectoEnsenate/ensenate",
-		"/home/said/ProyectoEnsenate/ensenate/dashboard",
-		"/home/said/ProyectoEnsenate/ensenate/static",
-		"/home/said/ProyectoEnsenate/ensenate/static/js",
 		"/home/said/ProyectoEnsenate/ensenate/templates",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard"
+		"/home/said/ProyectoEnsenate/ensenate/usuarios"
 	],
 	"file_history":
 	[
-		"/home/said/ProyectoEnsenate/ensenate/static/js/aprender.js",
+		"/home/said/ProyectoEnsenate/ensenate/templates/bases/base.html",
+		"/home/said/ProyectoEnsenate/ensenate/templates/bases/aside-user.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/login.css",
+		"/home/said/ProyectoEnsenate/ensenate/ensenate/urls.py",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/restablecer-password.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/base/footer.css",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/aprender.html",
 		"/home/said/ProyectoEnsenate/ensenate/dashboard/views.py",
+		"/media/said/F6E0-AE6D/Drive/448/rtqkbacy.js",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/inicio.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/leccion.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/lecciones.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/usuario/ayuda.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/usuario/ayuda.html",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/conf_pass.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/configuracion.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/contacto-usuario-activo.css",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/base/nav.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/perfil.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/perfil.css",
+		"/home/said/ProyectoEnsenate/ensenate/templates/bases/nav-user.html",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/dashboard.html",
+		"/home/said/ProyectoEnsenate/ensenate/usuarios/models.py",
+		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/secciones.html",
 		"/home/said/ProyectoEnsenate/ensenate/dashboard/urls.py",
+		"/home/said/ProyectoEnsenate/ensenate/usuarios/admin.py",
+		"/home/said/ProyectoEnsenate/ensenate/usuarios/views.py",
+		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard/aprender.css",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/vista_previa.html",
+		"/home/said/ProyectoEnsenate/ensenate/static/js/aprender.js",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/base/base.css",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/conf_cuenta.html",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/conf_pass.html",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/conf_perfil.html",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard.css",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/leccion.css",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/inicio.css",
 		"/home/said/ProyectoEnsenate/ensenate/templates/principal/inicio.html",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/dashboard/vista.css",
 		"/home/said/ProyectoEnsenate/ensenate/static/js/imagen.js",
 		"/home/said/ProyectoEnsenate/ensenate/dashboard/models.py",
-		"/home/said/ProyectoEnsenate/ensenate/templates/bases/base.html",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/usuario/vista.css",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/lecciones.html",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/dashboard.html",
-		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/secciones.html",
 		"/home/said/ProyectoEnsenate/ensenate/templates/dashboard/secciones-2.html",
-		"/home/said/ProyectoEnsenate/ensenate/usuarios/models.py",
-		"/home/said/ProyectoEnsenate/ensenate/usuarios/admin.py",
 		"/home/said/ProyectoEnsenate/ensenate/static/css/colores.css",
 		"/home/said/Respaldo/firefox.txt",
 		"/home/said/ProyectoEnsenate/ensenate/principal/views.py",
 		"/home/said/ProyectoEnsenate/ensenate/dashboard/admin.py",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/configuracion.css",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/usuario/ayuda.css",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/restablecer-password.css",
-		"/home/said/ProyectoEnsenate/ensenate/static/css/contacto-usuario-activo.css",
 		"/home/said/ProyectoEnsenate/ensenate/templates/principal/contactanos.html",
-		"/home/said/ProyectoEnsenate/ensenate/templates/usuario/ayuda.html",
-		"/home/said/ProyectoEnsenate/ensenate/templates/bases/nav-user.html",
 		"/home/said/ProyectoEnsenate/ensenate/usuarios/urls.py",
-		"/home/said/ProyectoEnsenate/ensenate/usuarios/views.py",
 		"/home/said/ProyectoEnsenate/ensenate/usuarios/forms.py",
-		"/home/said/ProyectoEnsenate/ensenate/templates/bases/aside-user.html",
 		"/home/said/pagina web/FalconMasters - Blog de Diseño Web, Tutoriales, Cursos, Recursos, Código.html",
 		"/home/said/FalconMasters - Blog de Diseño Web, Tutoriales, Cursos, Recursos, Código.html",
-		"/home/said/ProyectoEnsenate/ensenate/principal/forms.py",
-		"/home/said/ProyectoEnsenate/ensenate/ensenate/urls.py"
+		"/home/said/ProyectoEnsenate/ensenate/principal/forms.py"
 	],
 	"find":
 	{
-		"height": 17.0
+		"height": 19.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 71.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -286,6 +414,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"STATIC",
+			"CORRECTO",
+			"¡CORRECTO!",
+			"secciones-2",
+			"Leccion",
+			"DatosLeccionUsuario",
+			"print",
+			"eliminar_boton()",
 			".seccion-prueba"
 		],
 		"highlight": true,
@@ -309,48 +445,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "templates/dashboard/aprender.html",
+					"file": "static/js/form.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1388,
+						"buffer_size": 413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								328,
-								328
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "static/js/aprender.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 35,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								33,
-								33
+								324,
+								324
 							]
 						],
 						"settings":
@@ -361,24 +468,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "dashboard/views.py",
+					"buffer": 1,
+					"file": "templates/dashboard/conf_cuenta.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3228,
+						"buffer_size": 1537,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3097,
-								3097
+								1468,
+								1468
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "usuarios/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								888,
+								888
 							]
 						],
 						"settings":
@@ -387,7 +523,36 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1188.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "usuarios/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -398,11 +563,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 17.0
+		"height": 19.0
 	},
 	"input":
 	{
-		"height": 25.0
+		"height": 47.0
 	},
 	"layout":
 	{
@@ -435,7 +600,7 @@
 	"project": "ensenate.sublime-project",
 	"replace":
 	{
-		"height": 31.0
+		"height": 35.0
 	},
 	"save_all_on_build": true,
 	"select_file":

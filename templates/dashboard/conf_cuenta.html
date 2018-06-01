@@ -25,7 +25,7 @@
 				<form  role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form"> {% csrf_token %}
 					<div class="titulo-boton">
 						<span>Configuracion de la cuenta</span>
-						<input type="submit" value="Guardar Cambios">
+						<span class="boton-enviar inactivo">Guardar Cambios</span>
 					</div>
 
 					<div class="inputs">
@@ -62,4 +62,8 @@
 
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'js/form.js'%}" ></script>
 {% endblock %}

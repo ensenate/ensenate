@@ -28,7 +28,7 @@
 					
 						<div class="titulo-boton">
 							<span>Perfil</span>
-							<input type="submit" value="Guardar Cambios">
+							<span class="boton-enviar inactivo">Guardar Cambios</span>
 						</div>
 						
 						<div class="inputs">
@@ -71,4 +71,8 @@
 	</div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'js/form.js'%}" ></script>
 {% endblock %}

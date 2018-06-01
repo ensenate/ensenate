@@ -1,0 +1,206 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	ensenate / flappybird
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static 'css/juegos/juegos.css' %}">
+{% endblock %}
+
+
+{% block body %}
+	{% include 'bases/nav-user.html' %}
+	
+	<div class="contenedor">		
+		<div class="burbuja_invisible">
+			<div class="burbuja">
+				<h4 id="nombre_juego" class="titulo" >{{juego}}</h4>
+				
+				<canvas id="canvas" width="256px" height="320px">
+					
+				</canvas>
+				
+				<div class="salir">
+					<a id="salir" href="{% url 'perfil' %}">salir</a>
+				</div>
+			</div>
+
+			<div class="burbuja_derecha">
+				<div class="puntuaciones">
+					<span class="mejores_puntuaciones">
+						<h4 class="titulo" >Mejores Puntuaciones</h4>
+						<img class="icon-score" src="{% static 'img/bestscore.png' %}" alt="mejores puntuaciones">
+					</span>
+					
+					<ul class="list-mejores">
+					{% for mejores in mejorespuntuaciones %}
+						
+						<li class="puesto{{ forloop.counter }}">
+							<div class="">
+								<img src="{{ mejores.usuario.image.url }}" alt="">
+								<h4>{{mejores.usuario.username}}</h4>
+							</div>
+							<h4>{{mejores.puntos}}</h4>
+							
+						</li>
+
+					{% endfor %}
+					</ul>
+				
+				</div>
+
+				<div class="puntuaciones">
+					<span class="mejores_puntuaciones">
+						<h4 class="titulo" >Maxima Puntuacion</h4>
+						<img class="icon-score" src="{% static 'img/myscore.png' %}" alt="mejor puntuacion">
+					</span>
+					
+					<ul class="list-mejores">
+						<li class="mispuntos">
+							<div class="">
+								<img src="{{ request.user.image.url }}" alt="">
+								<h4>{{request.user.username}}</h4>
+							</div>
+							<h4>{{puntos}}</h4>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block scripts %}
+	<script>
+		var play = false;
+		var pausa = false;
+		var muerto = false;
+		var puntos = 0;
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext("2d");
+
+
+		//imagenes
+		var bg = new Image();
+		var fg = new Image();
+		var pipeUp = new Image();
+		var pipeDown = new Image();
+		var bird = new Image();
+		var inicio = new Image();
+		var game_over = new Image();
+
+		bg.src = "{% static 'img/juegos/flappy/bg.png' %}";
+		pipeUp.src = "{% static 'img/juegos/flappy/pipeup.png' %}";
+		pipeDown.src = "{% static 'img/juegos/flappy/pipedown.png' %}";
+		bird.src = "{% static 'img/juegos/flappy/bird.png' %}";
+		fg.src = "{% static 'img/juegos/flappy/fg.png' %}";
+		inicio.src = "{% static 'img/juegos/flappy/in.png' %}";
+		game_over.src = "{% static 'img/juegos/flappy/game_over.png' %}";
+
+		
+
+		var constante = pipeUp.height + 70;
+		var bx = 40;
+		var by = 40;
+		
+		//sonido
+		var vuelo = new Audio();
+		var punto = new Audio();
+
+		vuelo.src = "{% static 'sonidos/flappy/vuelo.mp3' %}";
+		punto.src = "{% static 'sonidos/flappy/punto.mp3' %}";
+
+
+		canvas.addEventListener("click", salto);
+
+		function salto(){
+			if(!play){
+				play = true;
+			}
+			else{
+				if(!muerto){
+					by -= 28;
+					vuelo.play();
+				}
+			}
+		}
+
+		var pipe = [];
+		pipe[0] = {
+			x:canvas.width,
+			y:0,
+		}
+
+		function draw(){
+			if(!play){
+				ctx.drawImage(this.inicio,0,0);
+			}
+			else{
+				if(!muerto){
+					if(play && !pausa){
+						ctx.drawImage(this.bg, 0, 0);
+
+						for (var i = 0; i < this.pipe.length; i++) {
+
+							ctx.drawImage(this.pipeUp, this.pipe[i].x, this.pipe[i].y);
+							ctx.drawImage(this.pipeDown, this.pipe[i].x, this.pipe[i].y + constante);				
+
+							pipe[i].x--;
+
+							if ( pipe[i].x == 125 ) {
+								pipe.push({
+									x:canvas.width,
+									y:Math.floor(Math.random()*pipeUp.height)-pipeUp.height + 10
+								});
+
+							}
+
+							if( bx + bird.width >= pipe[i].x && bx <= pipe[i].x + pipeUp.width && ( by <= pipe[i].y + pipeUp.height || by+bird.height >= pipe[i].y+constante) || by + bird.	height >= canvas.height - fg.height){
+								muerto = true;
+							}
+
+							if(pipe[i].x == 5){
+								puntos++;
+								punto.play();
+							}
+
+						}
+
+						ctx.drawImage(this.fg, 0, this.canvas.height-this.fg.height);
+						ctx.drawImage(this.bird, this.bx, this.by);
+
+						by+= 1.5;
+
+						ctx.fillStyle = "#fff";
+						ctx.font = "15px Ubuntu";
+						ctx.fillText("puntos: " + puntos, 10, 20);
+
+					}
+				}
+				else{
+					ctx.drawImage(this.game_over,0,0);
+					ctx.fillText("puntos: " + puntos, 10, 20);
+					var salir = document.getElementById('salir');
+					var direccion = "/guardar/{{juego}}/"+this.puntos;
+					salir.href = direccion;
+					return;
+				}
+			}
+
+
+			requestAnimationFrame(draw);
+
+		}
+
+		window.onkeydown = function() {
+		    pausa = !pausa;
+		};
+
+		draw();	
+	</script>
+{% endblock %}
