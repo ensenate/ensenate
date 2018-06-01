@@ -1,3 +1,65 @@
+@media screen and (max-width: 999px) {
+	.titulo-boton > span{
+		font-size: .8rem;
+	}
+	.campo-inputs > label{
+		width: 3.5em;
+	}
+
+	.burbuja-izquierda, .burbuja-derecha{
+		padding: 1em;
+	}
+	.usuario-list > a{
+		font-size: .7rem;
+	}
+
+	.titulo-boton > .boton-enviar{
+		padding: .8rem 1rem;
+	}
+
+	.campo-inputs{
+		margin: .5em;
+	}
+	
+	.campo-inputs > textarea{
+		width: 12.5rem;
+	}
+
+
+
+
+}
+@media screen and (min-width: 1000px){
+	.titulo-boton > span{
+		font-size: 1.3rem;
+	}
+
+	.campo-inputs > label{
+		width: 10em;
+	}
+
+	.burbuja-izquierda, .burbuja-derecha{
+		padding: 2em;
+	}
+	
+	.usuario-list > a{
+		font-size: .8rem;
+	}
+	
+	.titulo-boton > .boton-enviar{
+		padding: .8rem 1.5rem;
+	}
+
+	.campo-inputs{
+		margin: 1em;
+	}
+	.campo-inputs > textarea{
+		width: 15.5rem;
+	}
+
+
+}
+
 .burbuja-grande{
 	display: flex;
 	justify-content: space-between;
@@ -6,7 +68,6 @@
 
 .burbuja-izquierda, .burbuja-derecha{
 	background: white;
-	padding: 2em;
 	border-radius: 10px;
 	width: 60%;
 	box-shadow: 0 0 2px #d0d3d4;
@@ -24,14 +85,12 @@
 }
 
 .titulo-boton > span{
-	font-size: 1.3rem;
 	color: #333;
 	text-transform: uppercase;
 }
 
 .titulo-boton > .boton-enviar{
 	border: none;
-	padding: .8rem 1.5rem;
 	border-radius: 2rem;
 	background: #3498db;
 	color: white;
@@ -55,13 +114,11 @@
 }
 
 .campo-inputs{
-	margin: 1em;
 	align-items: center;
 	display: flex;
 }
 .campo-inputs > label{
 	background: none;
-	width: 10em;
 	color: #333;
 	display: block;
 	font-size: .8rem;
@@ -112,7 +169,6 @@
 
 
 .usuario-list > a{
-	font-size: .8rem;
 	color: #3498db;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -152,7 +208,6 @@
 	resize: none;
 	border: 2px solid #d8d8d8;
 	border-radius: 10px;
-	width: 15.5rem;
 }
 
 .campo-inputs > .fecha{

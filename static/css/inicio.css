@@ -2,6 +2,21 @@
 @import url('base/nav.css');
 @import url('base/footer.css');
 @import url(fontello.css);
+
+
+@media screen and (max-width: 999px) {
+
+  .texto-banner{
+  	margin-right: 38em;
+  }
+
+}
+@media screen and (min-width: 1000px){
+	.texto-banner{
+		margin-right: 42em;
+	}
+}
+
 body{
 	background: white;
 }
@@ -26,7 +41,6 @@ body{
 .texto-banner{
 	position: absolute;
 	margin-top: 1.5em;
-	margin-right: 42em;
 	text-align:center;
 	text-transform:  lowercase;
 	width: 19em;

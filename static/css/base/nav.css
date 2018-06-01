@@ -1,3 +1,21 @@
+@media screen and (max-width: 950px) {
+  .enlaces-derecha {
+    font-size: 0.7em;
+  }
+
+  .menu_inicio{
+  	padding-right: 0.5rem;
+  	padding-left: 0.5rem;
+  }
+
+
+}
+@media screen and (min-width: 1000px){
+	.navegacion .enlaces-derecha .menu_inicio{
+	padding: .3em 1.5em;
+	}
+}
+
 header{
 	width: 100%;
 	background: #FFF;
@@ -22,7 +40,6 @@ header{
 }
 
 .navegacion .enlaces-derecha .menu_inicio{
-	padding: .3em 1.5em;
 	background:  none;
 	
 	text-align: center;

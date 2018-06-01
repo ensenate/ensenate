@@ -3,6 +3,22 @@
 @import url('fontello.css');
 @import url('colores.css');
 
+
+@media screen and (max-width: 999px) {
+.navegacion_perfil li ul li a{
+
+	font-size: .7rem;
+}
+
+}
+@media screen and (min-width: 1000px){
+	.navegacion_perfil li ul li a{
+
+	font-size: .9rem;
+}
+
+}
+
 header{
 	background:  #3498db;
 	box-shadow: none;
@@ -101,7 +117,6 @@ body{
 	display: block;
 	padding: 0.5em;
 	color: #0088CC;
-	font-size: .9rem;
 	text-decoration: none;
 	transition: all;
 	transition-duration: 0.1s;
